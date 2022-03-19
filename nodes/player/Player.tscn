@@ -16,16 +16,22 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 32 )
+extents = Vector2( 8, 7 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 5 )
+jump_height = 35.0
+acceleration = 20.0
+ground_friction = 30.0
+air_friction = 5.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
 shape = SubResource( 2 )
 
 [node name="StateMachine" type="Node" parent="."]

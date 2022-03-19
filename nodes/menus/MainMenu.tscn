@@ -21,6 +21,7 @@ alignment = 1
 margin_right = 119.0
 margin_bottom = 14.0
 text = "Week Sauce Game"
+align = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 margin_top = 18.0
@@ -28,13 +29,13 @@ margin_right = 119.0
 margin_bottom = 38.0
 text = "Play"
 
-[node name="Help" type="Button" parent="VBoxContainer"]
+[node name="HelpButton" type="Button" parent="VBoxContainer"]
 margin_top = 42.0
 margin_right = 119.0
 margin_bottom = 62.0
 text = "Help"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
 margin_top = 66.0
 margin_right = 119.0
 margin_bottom = 86.0
@@ -44,5 +45,5 @@ __meta__ = {
 }
 
 [connection signal="button_down" from="VBoxContainer/PlayButton" to="." method="play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Help" to="." method="help_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/HelpButton" to="." method="help_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="exit_pressed"]
