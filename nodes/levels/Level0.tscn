@@ -37,7 +37,6 @@ limit_top = 0
 limit_right = 410
 limit_bottom = 220
 script = ExtResource( 2 )
-speed = 50
 
 [node name="Creature" type="RigidBody2D" parent="."]
 position = Vector2( 70, 101 )

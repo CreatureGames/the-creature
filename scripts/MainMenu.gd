@@ -5,7 +5,6 @@ signal help_menu
 signal exit
 
 
-
 func play_pressed():
 	emit_signal("play_game")
 
