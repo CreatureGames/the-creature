@@ -1,2 +1,3 @@
-# weeksauce-jam
-Godot game for Week Sauce game jam, March 2022.
+# Weeksauce Jam
+
+Godot game for [Week Sauce March 2022](https://itch.io/jam/weeksauce-3) game jam.
