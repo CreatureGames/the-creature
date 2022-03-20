@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=1]
+[ext_resource path="res://nodes/enemies/Bat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/creature.png" type="Texture" id=3]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=4]
 
@@ -54,3 +55,6 @@ drag_margin_top = 0.6
 drag_margin_right = 0.6
 drag_margin_bottom = 0.3
 editor_draw_drag_margin = true
+
+[node name="Bat" parent="." instance=ExtResource( 2 )]
+position = Vector2( 220, 23 )

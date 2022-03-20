@@ -19,6 +19,7 @@ animations = [ {
 extents = Vector2( 8, 7 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 3
 script = ExtResource( 5 )
 jump_height = 35.0
 acceleration = 20.0
