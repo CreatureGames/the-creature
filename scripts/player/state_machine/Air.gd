@@ -2,6 +2,10 @@
 extends PlayerState
 
 const coyote_jump_threshold := 0.05 # 3 frames @ 60fps
+const jump_buffer_threshold := 0.05
+
+var jump_pressed := false
+var time_since_jump_pressed := 0.0 # for jump buffering
 
 # If we get a message asking us to jump, we jump.
 func enter(msg := {}) -> void:
@@ -10,31 +14,41 @@ func enter(msg := {}) -> void:
 
 func update(delta):
 	player.airtime += delta
+	if jump_pressed:
+		time_since_jump_pressed += delta
 
 func physics_update(delta: float) -> void:
 	
-	var input_direction_x: float = player.get_input_direction()
-	
-	# accelerate
-	if not is_equal_approx(input_direction_x, 0.0):
-		player.velocity.x = clamp(player.velocity.x + (player.acceleration * input_direction_x), -player.max_speed, player.max_speed)
-	# decelerate
+	var input_direction: Vector2 = player.get_input_direction()
+	var accel_x : Vector2
+	if not is_equal_approx(input_direction.x, 0.0):
+		accel_x = player.acceleration * input_direction
 	else:
-		player.velocity.x = sign(player.velocity.x) * (abs(player.velocity.x) - player.air_friction)
+		accel_x = -sign(player.velocity.x) * player.air_friction * Vector2.RIGHT
 	
-	# "coyote jumping" for a couple frames after leaving a ledge
-	if Input.is_action_just_pressed("jump") and player.airtime <= coyote_jump_threshold:
-		player.jump()
-	
-	# gravity
-	player.velocity.y += player.gravity * delta
+	# movement & gravity
+	player.velocity += (player.gravity + accel_x) * delta
+	player.velocity.x = sign(player.velocity.x) * clamp(abs(player.velocity.x), 0, player.max_speed)
+	player.velocity.y = sign(player.velocity.y) * clamp(abs(player.velocity.y), 0, player.max_fall_speed)
 	
 	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
+	
+	# "coyote jumping" for a couple frames after leaving a ledge
+	if Input.is_action_just_pressed("jump"):
+		if player.airtime <= coyote_jump_threshold:
+			player.jump()
+		else:
+			jump_pressed = true
+			time_since_jump_pressed = 0.0
 
 	# Landing.
 	if player.is_on_floor():
 		player.airtime = 0.0
+		var msg = {}
+		if time_since_jump_pressed <= jump_buffer_threshold and jump_pressed:
+			msg = {jump_buffered = true}
+			
 		if is_equal_approx(player.velocity.x, 0.0):
-			state_machine.transition_to("Idle")
+			state_machine.transition_to("Idle", msg)
 		else:
-			state_machine.transition_to("Run")
+			state_machine.transition_to("Run", msg)

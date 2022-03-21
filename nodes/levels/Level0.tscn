@@ -40,6 +40,10 @@ shape = SubResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 110, 82 )
+max_speed = 80.0
+acceleration = 700.0
+ground_friction = 500.0
+air_friction = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true

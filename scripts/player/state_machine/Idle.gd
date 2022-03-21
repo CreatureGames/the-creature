@@ -2,8 +2,11 @@
 extends PlayerState
 
 # Upon entering the state, we set the Player node's velocity to zero.
-func enter(_msg := {}) -> void:
-	player.velocity = Vector2.ZERO
+func enter(msg := {}) -> void:
+	if msg.has("jump_buffered"):
+		state_machine.transition_to("Air", {do_jump = true})
+	else:
+		player.velocity = Vector2.ZERO
 
 
 func physics_update(_delta: float) -> void:
