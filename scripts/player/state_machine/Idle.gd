@@ -7,7 +7,14 @@ func enter(msg := {}) -> void:
 		state_machine.transition_to("Air", {do_jump = true})
 	else:
 		player.velocity = Vector2.ZERO
+		if msg.has("from_air"):
+			player.anim.play("land")
+		else:
+			player.anim.play("idle")
 
+func anim_finish():
+	if player.anim.animation != "idle" and state_machine.state == self:
+		player.anim.play("idle")
 
 func physics_update(_delta: float) -> void:
 	# If you have platforms that break when standing on them, you need that check for 
