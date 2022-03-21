@@ -19,11 +19,17 @@ var gravity : Vector2
 onready var anim : AnimatedSprite = $AnimatedSprite
 onready var spr_offset : Vector2 = $AnimatedSprite.offset
 
+var enabled := true
+
+
 func _ready():
 	recalc_physics()
 
 func get_input_direction() -> Vector2:
-	return (Input.get_action_strength("move_right") - Input.get_action_strength("move_left")) * Vector2.RIGHT
+	if enabled:
+		return (Input.get_action_strength("move_right") - Input.get_action_strength("move_left")) * Vector2.RIGHT
+	else:
+		return Vector2.ZERO
 
 func jump():
 	velocity.y = -jump_speed
@@ -31,3 +37,21 @@ func jump():
 func recalc_physics():
 	jump_speed = 2 * jump_height / jump_apex_time
 	gravity = 2 * jump_height / (pow(jump_apex_time, 2)) * Vector2.DOWN
+
+func swap_player():
+	pass
+
+func _input(event):
+	if event.is_action_pressed("swap"):
+		swap_player()
+
+func disable():
+	set_process_input(false)
+	enabled = false
+
+func enable():
+	set_process_input(true)
+#	for child in get_children():
+#		if child is CollisionShape2D:
+#			child.disabled = false
+	enabled = true
