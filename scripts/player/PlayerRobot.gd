@@ -10,7 +10,30 @@ onready var launch_point : Position2D = $LauchPoint
 var idle_timer := 0.0
 const idle_timer_threshold = 5.0 # snooze for creature
 
+export(NodePath) var creature
+
+func _ready():
+	get_node(creature).visible = false
+	get_node(creature).disable()
+
 func _process(delta):
 	creature_backpack.visible = has_creature
 	if idle_timer > idle_timer_threshold and creature_backpack.animation != "snooze":
 		creature_backpack.play("snooze")
+
+func store_creature():
+	has_creature = true
+	get_node(creature).visible = false
+
+func launch_creature():
+	has_creature = false
+	get_node(creature).visible = true
+	get_node(creature).global_position = launch_point.global_position
+	get_node(creature).launch()
+
+func swap_player():
+	get_node(creature).enable()
+	get_node(creature).visible = true
+	disable()
+	if has_creature:
+		launch_creature()
