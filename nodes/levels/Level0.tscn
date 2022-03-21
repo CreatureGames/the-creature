@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tilemaps/Temporary.tres" type="TileSet" id=1]
 [ext_resource path="res://nodes/enemies/Bat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/player/PlayerCreature.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=4]
 
 [sub_resource type="NavigationPolygon" id=1]
@@ -35,6 +36,7 @@ position = Vector2( 110, 82 )
 max_speed = 80.0
 acceleration = 700.0
 air_friction = 200.0
+creature = NodePath("../PlayerCreature")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -50,6 +52,9 @@ drag_margin_top = 0.6
 drag_margin_right = 0.6
 drag_margin_bottom = 0.3
 editor_draw_drag_margin = true
+
+[node name="PlayerCreature" parent="." instance=ExtResource( 3 )]
+robot = NodePath("../Player")
 
 [node name="Bat" parent="." instance=ExtResource( 2 )]
 position = Vector2( 220, 23 )
