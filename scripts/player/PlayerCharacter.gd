@@ -1,19 +1,17 @@
-class_name Player
+class_name PlayerCharacter
 extends KinematicBody2D
 
 export var max_speed := 120.0
-export var jump_height := 64.0
+export var jump_height := 35.0
 export var jump_apex_time := 0.3
 
-export var acceleration := 10.0
-export var ground_friction := 10.0
-export var air_friction := 10.0
+export var acceleration := 500.0
+export var ground_friction := 500.0
+export var air_friction := 50.0
 export var max_fall_speed := 500.0
 
 var velocity := Vector2.ZERO
 var airtime := 0.0
-var has_creature := true
-var drill_out := false
 
 var jump_speed : float
 var gravity : Vector2
