@@ -9,6 +9,7 @@
 extents = Vector2( 7, 6 )
 
 [node name="Level0" type="Node2D"]
+pause_mode = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( -512, -300 )
