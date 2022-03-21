@@ -18,6 +18,9 @@ var drill_out := false
 var jump_speed : float
 var gravity : Vector2
 
+onready var anim : AnimatedSprite = $AnimatedSprite
+onready var spr_offset : Vector2 = $AnimatedSprite.offset
+
 func _ready():
 	recalc_physics()
 

@@ -11,11 +11,21 @@ var time_since_jump_pressed := 0.0 # for jump buffering
 func enter(msg := {}) -> void:
 	if msg.has("do_jump"):
 		player.jump()
+		player.anim.play("jump")
 
 func update(delta):
+	var input_direction: Vector2 = player.get_input_direction()
+	
 	player.airtime += delta
 	if jump_pressed:
 		time_since_jump_pressed += delta
+		
+	# animations
+	if player.velocity.y > 0 and player.anim.animation != "fall":
+		player.anim.play("fall")
+	if not is_equal_approx(input_direction.x, 0.0):
+		player.anim.flip_h = input_direction.x < 0.0
+		player.anim.offset.x = -player.spr_offset.x if input_direction.x < 0.0 else player.spr_offset.x
 
 func physics_update(delta: float) -> void:
 	
@@ -44,7 +54,7 @@ func physics_update(delta: float) -> void:
 	# Landing.
 	if player.is_on_floor():
 		player.airtime = 0.0
-		var msg = {}
+		var msg = {from_air = true}
 		if time_since_jump_pressed <= jump_buffer_threshold and jump_pressed:
 			msg = {jump_buffered = true}
 			

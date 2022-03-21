@@ -36,8 +36,10 @@ func exit() -> void:
 # pauses or unpauses the game
 func toggle_pause() -> void:
 	if not active_menu:
+		get_tree().paused = true
 		set_active_menu($CanvasLayer/PauseMenu)
 	else:
+		get_tree().paused = false
 		set_active_menu(null)
 
 # shows requested menu and hides previously visible menu

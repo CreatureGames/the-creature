@@ -4,11 +4,25 @@ extends PlayerState
 func enter(msg := {}) -> void:
 	if msg.has("jump_buffered"):
 		state_machine.transition_to("Air", {do_jump = true})
+	else:
+		if msg.has("from_air"):
+			player.anim.play("land")
+		else:
+			player.anim.play("run")
+
+func anim_finish():
+	if player.anim.animation != "run" and state_machine.state == self:
+		player.anim.play("run")
+
+func update(delta: float) -> void:
+	# animation handling
+	var input_direction: Vector2 = player.get_input_direction()
+	if not is_equal_approx(input_direction.x, 0.0):
+		player.anim.flip_h = input_direction.x < 0.0
+		player.anim.offset.x = -player.spr_offset.x if input_direction.x < 0.0 else player.spr_offset.x
 
 func physics_update(delta: float) -> void:
-	# Notice how we have some code duplication between states. That's inherent to the pattern,
-	# although in production, your states will tend to be more complex and duplicate code
-	# much more rare.
+
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 		return
