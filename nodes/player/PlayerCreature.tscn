@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 5.5 )
 
-[node name="PlayerCreature" type="KinematicBody2D" groups=["creature"]]
+[node name="PlayerCreature" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 6 )
 max_speed = 140.0

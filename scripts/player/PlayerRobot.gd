@@ -15,6 +15,7 @@ export(NodePath) var creature
 func _ready():
 	get_node(creature).visible = false
 	get_node(creature).disable()
+	cam.set_target(self)
 
 func _process(delta):
 	creature_backpack.visible = has_creature
@@ -34,6 +35,7 @@ func launch_creature():
 func swap_player():
 	get_node(creature).enable()
 	get_node(creature).visible = true
+	cam.set_target(get_node(creature))
 	disable()
 	if has_creature:
 		launch_creature()

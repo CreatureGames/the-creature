@@ -8,4 +8,5 @@ func launch():
 
 func swap_player():
 	get_node(robot).enable()
+	cam.set_target(get_node(robot))
 	disable()

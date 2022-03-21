@@ -18,6 +18,7 @@ var gravity : Vector2
 
 onready var anim : AnimatedSprite = $AnimatedSprite
 onready var spr_offset : Vector2 = $AnimatedSprite.offset
+onready var cam = get_parent().get_node("CameraController")
 
 var enabled := true
 
@@ -51,7 +52,5 @@ func disable():
 
 func enable():
 	set_process_input(true)
-#	for child in get_children():
-#		if child is CollisionShape2D:
-#			child.disabled = false
 	enabled = true
+	$StateMachine.transition_to("Idle")

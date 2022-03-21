@@ -13,8 +13,11 @@ func enter(msg := {}) -> void:
 			player.anim.play("idle")
 
 func anim_finish():
-	if player.anim.animation != "idle" and state_machine.state == self:
-		player.anim.play("idle")
+	if player.enabled:
+		if player.anim.animation != "idle" and state_machine.state == self:
+			player.anim.play("idle")
+	elif player.anim.animation != "sit":
+		player.anim.play("sit")
 
 func physics_update(_delta: float) -> void:
 	# If you have platforms that break when standing on them, you need that check for 
