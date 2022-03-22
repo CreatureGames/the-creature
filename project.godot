@@ -123,6 +123,8 @@ interact={
 
 [layer_names]
 
+2d_render/layer_1="tilemap"
+2d_render/layer_2="player"
 2d_physics/layer_1="tiles"
 2d_physics/layer_2="player"
 

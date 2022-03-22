@@ -6,15 +6,18 @@ var path : Array = []
 
 
 func enter(_msg := {}) -> void:
-	get_node("../../AnimatedSprite").play("flap")
-	get_node("../../AttackTimer").start()
+	bat.get_node("AnimatedSprite").play("flap")
+	bat.get_node("AttackTimer").start()
 
-# https://godotengine.org/asset-library/asset/117
 func physics_update(delta: float) -> void:
 	if not bat.players.empty():
+		# https://godotengine.org/asset-library/asset/117
 		_update_navigation_path(bat.position, bat.players[0].position)
 		var dist = bat.follow_speed * delta
 		move_along_path(dist)
+
+func exit() -> void:
+	bat.get_node("AttackTimer").stop()
 
 # https://godotengine.org/asset-library/asset/117
 func move_along_path(distance):

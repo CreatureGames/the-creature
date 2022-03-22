@@ -20,7 +20,7 @@ func physics_update(delta: float) -> void:
 		if collision:
 			if collision.collider.name == "Player":
 				print("Player hit!") # TODO damage or something
-			get_parent().transition_to("Fly")
+			get_parent().transition_to("Follow")
 
 func exit() -> void:
 	for c in anim_sprite.get_signal_connection_list("animation_finished"):

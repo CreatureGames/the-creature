@@ -15,9 +15,10 @@ func detection_zone_entered(body) -> void:
 	players.append(body)
 	# wake up if sleeping
 	if $StateMachine.state.name == "Idle":
-		$StateMachine.transition_to("Fly")
+		$StateMachine.transition_to("Follow")
 
+# someone's far...
 func detection_zone_exited(body) -> void:
 	players.erase(body)
 	if players.empty():
-		$StateMachine.transition_to("Idle")
+		$StateMachine.transition_to("FlyToCeiling")
