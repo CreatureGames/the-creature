@@ -3,6 +3,8 @@ extends KinematicBody2D
 
 export var nav2D : NodePath
 
+export var target_y_offset : int
+export var attack_x_threshold : int
 export var follow_speed : int
 export var attack_speed : int
 

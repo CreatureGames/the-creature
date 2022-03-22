@@ -7,14 +7,22 @@ var path : Array = []
 
 func enter(_msg := {}) -> void:
 	bat.get_node("AnimatedSprite").play("flap")
-	bat.get_node("AttackTimer").start()
 
 func physics_update(delta: float) -> void:
 	if not bat.players.empty():
 		# https://godotengine.org/asset-library/asset/117
-		_update_navigation_path(bat.position, bat.players[0].position)
+		var target_pos = bat.players[0].position
+		target_pos.y -= bat.target_y_offset # fly over player before attack
+		_update_navigation_path(bat.position, target_pos)
 		var dist = bat.follow_speed * delta
 		move_along_path(dist)
+		
+		# attack!
+		if abs(bat.position.x - target_pos.x) < bat.attack_x_threshold:
+			if bat.get_node("AttackTimer").is_stopped():
+				bat.get_node("AttackTimer").start()
+		else:
+			bat.get_node("AttackTimer").stop()
 
 func exit() -> void:
 	bat.get_node("AttackTimer").stop()
