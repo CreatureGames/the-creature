@@ -16,7 +16,6 @@ extents = Vector2( 9, 5.5 )
 
 [node name="PlayerCreature" type="KinematicBody2D"]
 collision_layer = 2
-collision_mask = 9
 script = ExtResource( 6 )
 max_speed = 140.0
 jump_height = 54.0
