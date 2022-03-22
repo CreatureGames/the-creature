@@ -1,5 +1,5 @@
-extends State
+extends EnemyState
 
 
 func enter(_msg := {}) -> void:
-	get_node("../../AnimatedSprite").play("idle")
+	enemy.anim.play("idle")

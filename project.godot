@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/enemies/Enemy.gd"
+}, {
+"base": "State",
+"class": "EnemyState",
+"language": "GDScript",
+"path": "res://scripts/enemies/EnemyState.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "PlayerCharacter",
 "language": "GDScript",
 "path": "res://scripts/player/PlayerCharacter.gd"
@@ -40,6 +50,8 @@ _global_script_classes=[ {
 "path": "res://scripts/player/state_machine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
+"EnemyState": "",
 "PlayerCharacter": "",
 "PlayerCreature": "",
 "PlayerRobot": "",
@@ -53,6 +65,10 @@ _global_script_class_icons={
 config/name="WeeksauceJam"
 run/main_scene="res://nodes/App.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 [global]
 

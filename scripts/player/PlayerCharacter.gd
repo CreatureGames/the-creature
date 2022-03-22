@@ -57,3 +57,6 @@ func enable():
 	set_process_input(true)
 	enabled = true
 	$StateMachine.transition_to("Idle")
+
+func take_damage():
+	pass
