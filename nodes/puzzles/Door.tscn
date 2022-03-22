@@ -135,6 +135,7 @@ extents = Vector2( 4, 16 )
 [node name="Door" type="AnimatedSprite"]
 frames = SubResource( 28 )
 script = ExtResource( 2 )
+close_delay = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

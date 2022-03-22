@@ -1,7 +1,15 @@
 extends AnimatedSprite
 
+export var close_delay : float
+
+var _signal_count : int = 0 # how many buttons are keeping door open?
+
+func _ready():
+	$CloseDelay.wait_time = close_delay
+
 func open():
-	if $OpenCollisionDelay.is_stopped():
+	_signal_count += 1
+	if _signal_count == 1 and $OpenCollisionDelay.is_stopped():
 		if $CloseDelay.is_stopped():
 			print("opening")
 			stop()
@@ -13,8 +21,8 @@ func open():
 			$CloseDelay.stop()
 
 func start_closing():
-	if $CloseDelay.is_stopped():
-		print("starting to close")
+	_signal_count -= 1
+	if $CloseDelay.is_stopped() and _signal_count == 0:
 		$CloseCollisionDelay.stop()
 		$CloseDelay.start()
 
