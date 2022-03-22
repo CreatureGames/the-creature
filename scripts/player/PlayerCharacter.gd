@@ -45,6 +45,9 @@ func swap_player():
 func _input(event):
 	if event.is_action_pressed("swap"):
 		swap_player()
+	if enabled:
+		if event.is_action_pressed("interact"):
+			$Interactable.interact()
 
 func disable():
 	set_process_input(false)
