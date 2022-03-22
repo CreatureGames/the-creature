@@ -37,7 +37,7 @@ zoom_speed = 1.5
 
 [node name="Camera2D" type="Camera2D" parent="CameraController"]
 current = true
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.28, 0.28 )
 limit_left = 0
 limit_top = 0
 limit_right = 815
@@ -51,15 +51,14 @@ drag_margin_bottom = 0.3
 editor_draw_limits = true
 
 [node name="PlayerCreature" parent="." instance=ExtResource( 3 )]
-position = Vector2( -63, -1 )
+position = Vector2( 472, -11 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 33, 79 )
+position = Vector2( 32, 81 )
 creature = NodePath("../PlayerCreature")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 position = Vector2( 552, 183 )
 collision_layer = 0
 collision_mask = 2
@@ -68,7 +67,6 @@ collision_mask = 2
 polygon = PoolVector2Array( -135, 110, -21, 75, 139, 102, 137, -135, -136, -134 )
 
 [node name="Bat" parent="." instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 608, 56 )
 nav2D = NodePath("../Navigation2D")
 

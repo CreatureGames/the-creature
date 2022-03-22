@@ -48,7 +48,7 @@ drag_margin_bottom = 0.3
 editor_draw_limits = true
 
 [node name="PlayerCreature" parent="." instance=ExtResource( 3 )]
-position = Vector2( -63, -1 )
+position = Vector2( 241, -20 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
