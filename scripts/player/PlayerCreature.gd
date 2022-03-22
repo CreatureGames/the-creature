@@ -14,7 +14,7 @@ func swap_player():
 
 func set_facing(left: bool):
 	anim.flip_h = left
-	anim.offset.x = -spr_offset.x if left else spr_offset.x
+	anim.position.x = -spr_offset.x if left else spr_offset.x
 
 func disable():
 	.disable()

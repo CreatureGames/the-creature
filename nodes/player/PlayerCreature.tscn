@@ -9,10 +9,10 @@
 [ext_resource path="res://nodes/Interactable.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 5.5 )
+extents = Vector2( 8, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9, 5.5 )
+extents = Vector2( 8, 5.5 )
 
 [node name="PlayerCreature" type="KinematicBody2D"]
 collision_layer = 2
@@ -23,9 +23,9 @@ jump_apex_time = 0.35
 air_friction = 40.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, -16 )
 frames = ExtResource( 1 )
 animation = "idle"
-offset = Vector2( -1, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5.5 )
