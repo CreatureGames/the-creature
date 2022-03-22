@@ -3,6 +3,7 @@ extends PlayerCharacter
 
 var has_creature := true
 var drill_out := false
+var battery_level = 100 setget set_battery, get_battery
 
 onready var creature_backpack : AnimatedSprite = $CreatureBackpack
 onready var launch_point : Position2D = $LauchPoint
@@ -45,4 +46,11 @@ func interact(): # called when creature interacts with robot
 	get_node(creature).swap_player()
 
 func take_damage():
-	print("robot took damage")
+	set_battery(battery_level - 1)
+
+func set_battery(value):
+	battery_level = clamp(value, 0, 100)
+	$BatteryIndicator.value = value
+	
+func get_battery():
+	return battery_level
