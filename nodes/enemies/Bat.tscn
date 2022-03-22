@@ -135,6 +135,8 @@ height = 4.0
 radius = 100.0
 
 [node name="Bat" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 3
 script = ExtResource( 2 )
 target_y_offset = 35
 attack_x_threshold = 15
@@ -150,7 +152,7 @@ shape = SubResource( 41 )
 
 [node name="DetectionZone" type="Area2D" parent="."]
 position = Vector2( 0, 7 )
-collision_layer = 2
+collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
