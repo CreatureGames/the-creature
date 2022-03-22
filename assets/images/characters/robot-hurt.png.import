@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door.png-683592a1dc3d59377ddff4367ac8b6f2.stex"
+path="res://.import/robot-hurt.png-83c57b2267d4d747d5989bbfc1a7d3eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/puzzles/door.png"
-dest_files=[ "res://.import/door.png-683592a1dc3d59377ddff4367ac8b6f2.stex" ]
+source_file="res://assets/images/characters/robot-hurt.png"
+dest_files=[ "res://.import/robot-hurt.png-83c57b2267d4d747d5989bbfc1a7d3eb.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

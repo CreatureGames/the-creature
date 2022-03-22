@@ -66,10 +66,6 @@ config/name="WeeksauceJam"
 run/main_scene="res://nodes/App.tscn"
 config/icon="res://icon.png"
 
-[debug]
-
-shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
-
 [global]
 
 collision=false
