@@ -11,7 +11,6 @@ func open():
 	_signal_count += 1
 	if _signal_count == 1 and $OpenCollisionDelay.is_stopped():
 		if $CloseDelay.is_stopped():
-			print("opening")
 			stop()
 			frame = 0
 			play("open")
