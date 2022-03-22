@@ -11,7 +11,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.5, 13.5 )
 
-[node name="PlayerRobot" type="KinematicBody2D" groups=["robot"]]
+[node name="PlayerRobot" type="KinematicBody2D" groups=[
+"robot",
+]]
 collision_layer = 2
 script = ExtResource( 1 )
 
