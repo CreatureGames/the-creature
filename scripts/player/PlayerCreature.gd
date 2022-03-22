@@ -15,3 +15,18 @@ func swap_player():
 func set_facing(left: bool):
 	anim.flip_h = left
 	anim.offset.x = -spr_offset.x if left else spr_offset.x
+
+func disable():
+	.disable()
+	if not visible:
+		var interactable : CollisionObject2D = get_node("Interactable")
+		if interactable:
+			interactable.set_collision_layer_bit(2, false)
+			interactable.set_collision_mask_bit(2, false)
+
+func enable():
+	.enable()
+	var interactable : CollisionObject2D = get_node("Interactable")
+	if interactable:
+		interactable.set_collision_layer_bit(2, true)
+		interactable.set_collision_mask_bit(2, true)
