@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
 [ext_resource path="res://nodes/player/PlayerCreature.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/CameraController.gd" type="Script" id=4]
+[ext_resource path="res://nodes/enemies/Bat.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D"]
 
@@ -59,6 +60,9 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -135, 110, -21, 75, 139, 102, 137, -135, -136, -134 )
+
+[node name="Bat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 608, 56 )
 
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.45 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
