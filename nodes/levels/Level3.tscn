@@ -151,7 +151,6 @@ position = Vector2( 80, 384 )
 
 [node name="Door3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 449, 384 )
-close_delay = 0.1
 
 [node name="Button3-1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 321, 320 )
@@ -161,7 +160,6 @@ position = Vector2( 480, 384 )
 
 [node name="Door1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 249, 80 )
-close_delay = 0.5
 
 [node name="Button1-1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 100, 80 )

@@ -17,7 +17,7 @@ var jump_speed : float
 var gravity : Vector2
 
 onready var anim : AnimatedSprite = $AnimatedSprite
-onready var spr_offset : Vector2 = $AnimatedSprite.offset
+onready var spr_offset : Vector2 = $AnimatedSprite.position
 onready var cam = get_parent().get_node("CameraController")
 
 var enabled := true

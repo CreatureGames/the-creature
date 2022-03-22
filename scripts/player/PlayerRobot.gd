@@ -8,6 +8,8 @@ var battery_level = MAX_BATTERY setget set_battery, get_battery
 
 onready var creature_backpack : AnimatedSprite = $CreatureBackpack
 onready var launch_point : Position2D = $LauchPoint
+onready var drill_offset : Vector2 = $DrillSprite.position
+onready var drill_offset2 : Vector2 = $Drill.get_node("CollisionShape2D").position
 
 var idle_timer := 0.0
 const idle_timer_threshold = 5.0 # snooze for creature
@@ -67,6 +69,9 @@ func recharge_battery():
 func set_facing(left: bool):
 	anim.flip_h = left
 	creature_backpack.flip_h = left
-	anim.offset.x = -spr_offset.x if left else spr_offset.x
-	creature_backpack.offset.x = -spr_offset.x if left else spr_offset.x
+	anim.position.x = -spr_offset.x if left else spr_offset.x
+	creature_backpack.position.x = -spr_offset.x if left else spr_offset.x
 	$BatteryIndicator.rect_scale.x = -1 if left else 1
+	$Drill.get_node("CollisionShape2D").position.x = -drill_offset2.x if left else drill_offset2.x
+	$DrillSprite.flip_h = left
+	$DrillSprite.position.x = -drill_offset.x if left else drill_offset.x
