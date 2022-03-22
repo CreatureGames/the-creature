@@ -21,10 +21,7 @@ func update(delta: float) -> void:
 	# animation handling
 	var input_direction: Vector2 = player.get_input_direction()
 	if not is_equal_approx(input_direction.x, 0.0):
-		player.anim.flip_h = input_direction.x < 0.0
-		player.creature_backpack.flip_h = input_direction.x < 0.0
-		player.anim.offset.x = -player.spr_offset.x if input_direction.x < 0.0 else player.spr_offset.x
-		player.creature_backpack.offset.x = -player.spr_offset.x if input_direction.x < 0.0 else player.spr_offset.x
+		player.set_facing(input_direction.x < 0.0)
 
 func physics_update(delta: float) -> void:
 
