@@ -3,7 +3,8 @@ extends PlayerCharacter
 
 var has_creature := true
 var drill_out := false
-var battery_level = 100 setget set_battery, get_battery
+const MAX_BATTERY = 100
+var battery_level = MAX_BATTERY setget set_battery, get_battery
 
 onready var creature_backpack : AnimatedSprite = $CreatureBackpack
 onready var launch_point : Position2D = $LauchPoint
@@ -24,6 +25,7 @@ func _process(delta):
 		creature_backpack.play("snooze")
 
 func store_creature():
+	recharge_battery()
 	has_creature = true
 	get_node(creature).visible = false
 
@@ -49,8 +51,22 @@ func take_damage():
 	set_battery(battery_level - 1)
 
 func set_battery(value):
-	battery_level = clamp(value, 0, 100)
+	battery_level = clamp(value, 0, MAX_BATTERY)
 	$BatteryIndicator.value = value
+	if battery_level <= 0 and enabled:
+		if has_creature:
+			launch_creature()
+		swap_player()
 	
 func get_battery():
 	return battery_level
+
+func recharge_battery():
+	set_battery(MAX_BATTERY)
+
+func set_facing(left: bool):
+	anim.flip_h = left
+	creature_backpack.flip_h = left
+	anim.offset.x = -spr_offset.x if left else spr_offset.x
+	creature_backpack.offset.x = -spr_offset.x if left else spr_offset.x
+	$BatteryIndicator.rect_scale.x = -1 if left else 1

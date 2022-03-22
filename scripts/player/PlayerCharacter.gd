@@ -60,3 +60,6 @@ func enable():
 
 func take_damage():
 	pass
+
+func set_facing(left: bool):
+	pass

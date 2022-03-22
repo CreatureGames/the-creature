@@ -26,6 +26,7 @@ margin_left = -14.0
 margin_top = -6.0
 margin_right = -6.0
 margin_bottom = 4.0
+rect_pivot_offset = Vector2( 14, 6 )
 mouse_filter = 2
 step = 20.0
 value = 100.0

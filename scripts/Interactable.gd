@@ -6,12 +6,12 @@ signal interact_enter
 signal interact_exit
 
 func interact_entered(area):
-	emit_signal("interact_enter")
 	partners.append(area)
+	emit_signal("interact_enter")
 
 func interact_exited(area):
-	emit_signal("interact_exit")
 	partners.erase(area)
+	emit_signal("interact_exit")
 
 func _interact():
 	emit_signal("on_interact")
