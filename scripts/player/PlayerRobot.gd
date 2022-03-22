@@ -43,3 +43,6 @@ func swap_player():
 func interact(): # called when creature interacts with robot
 	store_creature()
 	get_node(creature).swap_player()
+
+func take_damage():
+	print("robot took damage")

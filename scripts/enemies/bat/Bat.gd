@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Enemy
 
 
 export var nav2D : NodePath
@@ -9,8 +9,13 @@ export var follow_speed : int
 export var attack_speed : int
 
 onready var nav : Navigation2D = get_node(nav2D)
+onready var anim = $AnimatedSprite
 var players : Array = []
 
+func _physics_process(delta):
+	for p in in_damage_area:
+		if p.has_method("take_damage"):
+			p.take_damage()
 
 # someone's near...
 func detection_zone_entered(body) -> void:
