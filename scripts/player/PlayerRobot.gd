@@ -39,3 +39,7 @@ func swap_player():
 	disable()
 	if has_creature:
 		launch_creature()
+
+func interact(): # called when creature interacts with robot
+	store_creature()
+	get_node(creature).swap_player()
