@@ -8,11 +8,13 @@ const GAME_DATA_PATH = "user://save_game.dat"
 var active_menu		= null	# holds the active (visible) menu
 var active_level	= null	# holds the game level currently being played
 var level_num		= 1		# current highest level the player has completed
+var loader			= null	# used for async level loading
+var time_max		= 100	# max time to block loading thread
 
 
 # DEBUGGING
-#func _ready():
-#	save_level_num(1)
+func _ready():
+	save_level_num(2)
 
 
 ######## SCENE MANAGEMENT ########
@@ -61,11 +63,46 @@ func load_level(level: int) -> bool:
 	var path = "res://nodes/levels/Level%d.tscn" % level
 	var f = File.new()
 	if f.file_exists(path):
-		active_level = load(path).instance()
-		add_child(active_level)
-		active_level.connect("completed", self, "level_completed")
+		loader = ResourceLoader.load_interactive(path)
+		if loader == null: # Check for errors.
+			print("Error in load_level")
+		set_process(true)
+		set_active_menu($CanvasLayer/LoadingScreen)
 		result = true
 	return result
+
+# called when level is finally loaded
+func level_loaded(level) -> void:
+	set_active_menu(null)
+	active_level = level
+	add_child(active_level)
+	active_level.connect("completed", self, "level_completed")
+
+# async loading stuff
+# https://docs.godotengine.org/en/stable/tutorials/io/background_loading.html
+func _process(time) -> void:
+	if loader == null:
+		# no need to process anymore
+		set_process(false)
+		return
+	
+	var t = OS.get_ticks_msec()
+	# Use "time_max" to control for how long we block this thread.
+	while OS.get_ticks_msec() < t + time_max:
+		# Poll your loader.
+		var err = loader.poll()
+		
+		if err == ERR_FILE_EOF: # Finished loading.
+			var resource = loader.get_resource()
+			loader = null
+			level_loaded(resource.instance())
+			break
+		elif err == OK:
+			pass # update loading animation or something
+		else: # Error during loading.
+			print("Error in _process")
+			loader = null
+			break
 
 # removes level from tree and frees resources
 func evict_level() -> void:
