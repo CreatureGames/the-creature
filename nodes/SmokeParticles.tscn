@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/vfx/smoke-vfx.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.125523, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.439331, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.152778, 0.833333, 1 )
+colors = PoolColorArray( 0.266667, 0.266667, 0.266667, 0, 0.254902, 0.254902, 0.254902, 0.443137, 0.290196, 0.290196, 0.290196, 0.560784, 0.247059, 0.247059, 0.247059, 0.109804 )
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+lifetime = 3.0
+lifetime_randomness = 0.37
+texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 6.08
+direction = Vector2( 0, -1 )
+spread = 12.14
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+angular_velocity = 137.14
+angular_velocity_random = 1.0
+angle = 34.3
+angle_random = 1.0
+scale_amount_random = 0.17
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
