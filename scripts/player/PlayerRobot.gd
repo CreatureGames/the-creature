@@ -50,9 +50,12 @@ func swap_player():
 	if has_creature:
 		launch_creature()
 
-func interact(): # called when creature interacts with robot
+func rejoin_robot():
 	store_creature()
 	get_node(creature).swap_player()
+
+func interact(): # called when creature interacts with robot
+	rejoin_robot()
 
 func take_damage():
 	set_battery(battery_level - 1)

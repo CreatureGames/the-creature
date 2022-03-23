@@ -52,3 +52,4 @@ shape = SubResource( 2 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine/Idle" method="anim_finish"]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine/Run" method="anim_finish"]
+[connection signal="on_interact" from="Interactable" to="." method="interact"]
