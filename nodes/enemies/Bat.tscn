@@ -142,7 +142,7 @@ height = 4.0
 [node name="Bat" type="KinematicBody2D"]
 collision_layer = 8
 script = ExtResource( 2 )
-target_y_offset = 35
+target_y_offset = 48
 attack_x_threshold = 15
 follow_speed = 35
 attack_speed = 150
@@ -201,5 +201,5 @@ one_shot = true
 [connection signal="body_exited" from="DetectionZone" to="." method="detection_zone_exited"]
 [connection signal="body_entered" from="DamageArea" to="." method="player_enter_damage"]
 [connection signal="body_exited" from="DamageArea" to="." method="player_exit_damage"]
-[connection signal="timeout" from="AttackTimer" to="StateMachine" method="transition_to" binds= [ "Broadcast" ]]
+[connection signal="timeout" from="AttackTimer" to="StateMachine/Follow" method="attack"]
 [connection signal="timeout" from="FallTimer" to="StateMachine/Attack" method="timer_timeout"]

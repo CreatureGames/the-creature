@@ -16,6 +16,9 @@ func set_facing(left: bool):
 	anim.flip_h = left
 	anim.position.x = -spr_offset.x if left else spr_offset.x
 
+func interact():
+	get_node(robot).rejoin_robot()
+
 func disable():
 	.disable()
 	if not visible:

@@ -14,7 +14,7 @@ var players : Array = []
 
 func _physics_process(delta):
 	for p in in_damage_area:
-		if p.has_method("take_damage"):
+		if p.has_method("take_damage") and $StateMachine.state == $StateMachine/Attack:
 			p.take_damage()
 
 # someone's near...
@@ -29,3 +29,9 @@ func detection_zone_exited(body) -> void:
 	players.erase(body)
 	if players.empty():
 		$StateMachine.transition_to("FlyToCeiling")
+
+func drill_hit():
+	die()
+
+func die():
+	queue_free()
