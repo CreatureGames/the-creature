@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://nodes/puzzles/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/puzzles/EasterEgg.gd" type="Script" id=6]
 [ext_resource path="res://nodes/puzzles/DestructibleBlock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/puzzles/Piston.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/images/puzzles/platform.png" type="Texture" id=9]
+[ext_resource path="res://nodes/puzzles/Platform.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 31.5 )
@@ -28,6 +31,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0.133333, 0.12549, 0.203922, 1 ), Color( 0.133333, 0.12549, 0.203922, 0 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 4 )
 
 [node name="Level" type="Node2D"]
 
@@ -73,7 +79,7 @@ position = Vector2( 26, -10 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 48, 530 )
+position = Vector2( 792, 168 )
 creature = NodePath("../PlayerCreature")
 
 [node name="ZoomOut" type="Area2D" parent="."]
@@ -88,9 +94,6 @@ position = Vector2( 758, 161 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ZoomIn"]
 polygon = PoolVector2Array( -65, 34, 90, 142, 154, 142, 265, 14, 264, -35, 60, -145, -21, -146 )
-
-[node name="Button" parent="." instance=ExtResource( 5 )]
-position = Vector2( 960, 160 )
 
 [node name="EasterEgg" type="Area2D" parent="."]
 collision_layer = 0
@@ -122,7 +125,45 @@ position = Vector2( 985, 160 )
 [node name="DestructibleBlock4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 985, 144 )
 
+[node name="PlatformButton" parent="." instance=ExtResource( 5 )]
+position = Vector2( 960, 160 )
+
+[node name="PlatformDest" type="Node2D" parent="."]
+position = Vector2( 896, 184 )
+
+[node name="Platform" parent="." instance=ExtResource( 10 )]
+position = Vector2( 896, 288 )
+destination = NodePath("../PlatformDest")
+duration = 3.0
+
+[node name="Sprite" type="Sprite" parent="Platform"]
+position = Vector2( -8, -4 )
+texture = ExtResource( 9 )
+hframes = 3
+
+[node name="Sprite2" type="Sprite" parent="Platform"]
+position = Vector2( 8, -4 )
+texture = ExtResource( 9 )
+hframes = 3
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2( 0, -4 )
+shape = SubResource( 4 )
+
+[node name="Piston" parent="." instance=ExtResource( 8 )]
+position = Vector2( 904, 296 )
+target = NodePath("../Platform")
+
+[node name="Piston2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 888, 296 )
+target = NodePath("../Platform")
+
 [connection signal="body_entered" from="ZoomOut" to="CameraController" method="set_zoom" binds= [ 0.55 ]]
 [connection signal="body_entered" from="ZoomIn" to="CameraController" method="set_zoom"]
 [connection signal="body_exited" from="ZoomIn" to="CameraController" method="set_zoom" binds= [ 0.55 ]]
 [connection signal="body_entered" from="EasterEgg" to="EasterEgg" method="reveal"]
+[connection signal="pressed" from="PlatformButton" to="Platform" method="go_forward"]
+[connection signal="released" from="PlatformButton" to="Platform" method="go_backward"]
+[connection signal="going_forward" from="Platform" to="Piston" method="animate"]
+[connection signal="going_forward" from="Platform" to="Piston2" method="animate"]
