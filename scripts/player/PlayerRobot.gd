@@ -10,6 +10,8 @@ onready var creature_backpack : AnimatedSprite = $CreatureBackpack
 onready var launch_point : Position2D = $LauchPoint
 onready var drill_offset : Vector2 = $DrillSprite.position
 onready var drill_offset2 : Vector2 = $Drill.get_node("CollisionShape2D").position
+onready var launch_offset : Vector2 = $LauchPoint.position
+onready var emote_offset : Vector2 = Vector2.ZERO
 onready var drill : KinematicBody2D = $Drill
 onready var drillsprite : AnimatedSprite = $DrillSprite
 
@@ -97,9 +99,11 @@ func set_facing(left: bool):
 	anim.position.x = -spr_offset.x if left else spr_offset.x
 	creature_backpack.position.x = -spr_offset.x if left else spr_offset.x
 	$BatteryIndicator.rect_scale.x = -1 if left else 1
-	$Drill.get_node("CollisionShape2D").position.x = -drill_offset2.x if left else drill_offset2.x
-	$DrillSprite.flip_h = left
-	$DrillSprite.position.x = -drill_offset.x if left else drill_offset.x
+	drill.get_node("CollisionShape2D").position.x = -drill_offset2.x if left else drill_offset2.x
+	drillsprite.flip_h = left
+	drillsprite.position.x = -drill_offset.x if left else drill_offset.x
+	$LauchPoint.position.x = -launch_offset.x if left else launch_offset.x
+#	$Emote.position.x = -emote_offset.x if left else emote_offset.x
 
 func _input(event):
 	if enabled:
