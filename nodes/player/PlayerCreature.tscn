@@ -9,7 +9,7 @@
 [ext_resource path="res://nodes/Interactable.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 5.5 )
+extents = Vector2( 7, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 5.5 )

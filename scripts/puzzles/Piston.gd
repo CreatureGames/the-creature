@@ -6,7 +6,7 @@ onready var _horizontal : bool = rotation_degrees == 90 or rotation_degrees == 2
 
 func _process(_delta):
 	if _horizontal:
-		$Line2D.points[1].x = _target.position.x - position.x
+		$Line2D.points[1].y = _target.position.x - position.x
 	else:
 		$Line2D.points[1].y = _target.position.y - position.y
 

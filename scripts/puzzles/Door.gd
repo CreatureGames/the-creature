@@ -21,6 +21,7 @@ func open():
 
 func start_closing():
 	_signal_count -= 1
+	_signal_count = max(0, _signal_count)
 	if $CloseDelay.is_stopped() and _signal_count == 0:
 		$CloseCollisionDelay.stop()
 		$CloseDelay.start()
