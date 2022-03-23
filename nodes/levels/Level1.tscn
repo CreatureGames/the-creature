@@ -203,7 +203,7 @@ animations = [ {
 
 [sub_resource type="Animation" id=37]
 resource_name = "Cutscene1"
-length = 10.0
+length = 30.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("CutsceneRobot:position:x")
 tracks/0/interp = 1
@@ -211,8 +211,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1.8, 2.5 )
+"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0, 597.55, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.8, 2.5, 17.4876, 20 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("CutsceneRobot:position:y")
@@ -221,8 +221,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3 )
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3, 20 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CutsceneRobot:scale")
@@ -231,10 +231,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 20.9606, 20.9906 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, 1 ) ]
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CutsceneRobot/DrillSprite:visible")
@@ -243,10 +243,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 18.7, 20.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, true, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CutsceneRobot/CreatureBackpack:visible")
@@ -279,10 +279,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 3, 17.5, 20.0006 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "run", "run" ]
+"values": [ "run", "idle", "run", "idle" ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("CutsceneRobot/Robot:frame")
@@ -291,10 +291,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 0,
-"values": [ 0 ]
+"values": [  ]
 }
 tracks/8/type = "bezier"
 tracks/8/path = NodePath("CutsceneCreature:position:x")
@@ -303,8 +303,8 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"points": PoolRealArray(  ),
-"times": PoolRealArray(  )
+"points": PoolRealArray( 565.172, -0.25, 0, 0.25, 0, 565.172, -0.25, 0, 0.25, 0, 552.51, 0, 0, 0, 0, 486.88, -0.25, 0, 0.25, 0, 486.88, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 513.682, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 384.397, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8.3, 8.31, 8.748, 13, 14, 14.3, 17.71, 19.24, 21.5, 22.7806, 24.0106 )
 }
 tracks/9/type = "bezier"
 tracks/9/path = NodePath("CutsceneCreature:position:y")
@@ -313,20 +313,44 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"points": PoolRealArray(  ),
-"times": PoolRealArray(  )
+"points": PoolRealArray( 241.595, 0, 0, 0, 0, 241.595, -0.25, 0, 0.25, 0, 224.134, -0.25, 0, 0.25, 0, 212.777, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.124, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.259, -0.25, 0, 0.25, 0, 224.162, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.119999, -0.465927, 180, -0.25, 0, 0.25, 0, 224, -0.140001, 0.0185852, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8.26, 8.27, 8.55, 8.8, 11.9869, 12.0969, 12.1869, 12.2869, 12.3969, 14, 14.3, 14.4076, 14.4776, 14.5976, 14.6776, 17.71, 19.24, 21.5406, 21.7206, 21.8906, 24.0106 )
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("CutsceneCreature:z_index")
+tracks/10/path = NodePath("CutsceneCreature/AnimatedSprite:animation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
+"times": PoolRealArray( 0, 5.3, 8.3, 8.73, 8.78, 12.9876, 13.9876, 17.71, 19.5451, 21.54, 21.89, 21.8906, 22.0506, 22.8006, 24.01 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "sleep", "blinkblink", "jump", "land", "idle", "run", "idle", "run", "sit", "jump", "land", "land", "idle", "run", "idle" ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("CutsceneCreature/AnimatedSprite:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
 "times": PoolRealArray(  ),
 "transitions": PoolRealArray(  ),
 "update": 1,
 "values": [  ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("CutsceneCreature:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 8.3, 8.31, 8.78, 12.99, 13, 15.5476, 15.5676, 19.2251, 19.2451 ),
+"transitions": PoolRealArray( 1, 0, 0, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -459,13 +483,21 @@ position = Vector2( 2198, 222 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
+position = Vector2( 513.952, 224 )
+scale = Vector2( -1, 1 )
+z_index = -1
+
+[node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
+animation = "sit"
+frame = 3
+playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 598.698, 224 )
-scale = Vector2( -1, 1 )
+position = Vector2( 434.089, 224 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-animation = "run"
+frame = 16
+playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
@@ -488,7 +520,7 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 36 )
 animation = "idle"
-frame = 7
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -608,4 +640,5 @@ position = Vector2( 112, 208 )
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
 
+[editable path="CutsceneCreature"]
 [editable path="CutsceneRobot"]
