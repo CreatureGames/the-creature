@@ -12,7 +12,7 @@ var loader			= null	# used for async level loading
 var time_max		= 100	# max time to block loading thread
 
 
-# DEBUGGING
+# DEBUGGING--remove this in the end
 func _ready():
 	save_level_num(2)
 
