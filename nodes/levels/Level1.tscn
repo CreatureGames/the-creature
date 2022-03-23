@@ -10,192 +10,158 @@
 [ext_resource path="res://nodes/player/CutsceneRobot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://nodes/player/CutsceneCreature.tscn" type="PackedScene" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 16.4266, 13.6115 )
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 6 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 6 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 6 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 6 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 6 )
 region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 6 )
 region = Rect2( 224, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 6 )
 region = Rect2( 256, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 6 )
 region = Rect2( 288, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 6 )
 region = Rect2( 320, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
+[sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 6 )
 region = Rect2( 352, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 6 )
 region = Rect2( 384, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 6 )
 region = Rect2( 416, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 6 )
 region = Rect2( 32, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 6 )
 region = Rect2( 64, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 6 )
 region = Rect2( 96, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
+[sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 6 )
 region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
+[sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 6 )
 region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 6 )
 region = Rect2( 32, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 6 )
 region = Rect2( 64, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 6 )
 region = Rect2( 96, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 6 )
 region = Rect2( 128, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 6 )
 region = Rect2( 160, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 6 )
 region = Rect2( 192, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
+[sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 6 )
 region = Rect2( 224, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
-flags = 4
+[sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 6 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
-flags = 4
+[sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 6 )
 region = Rect2( 288, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
-flags = 4
+[sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 6 )
 region = Rect2( 320, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=33]
-flags = 4
+[sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 6 )
 region = Rect2( 352, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=34]
-flags = 4
+[sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 6 )
 region = Rect2( 384, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=35]
-flags = 4
+[sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 6 )
 region = Rect2( 416, 64, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=36]
+[sub_resource type="SpriteFrames" id=73]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
 "loop": false,
 "name": "interact",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
 "loop": false,
 "name": "recover",
 "speed": 12.0
@@ -352,8 +318,184 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
 }
+tracks/13/type = "method"
+tracks/13/path = NodePath("DestructibleBlock13")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/14/type = "method"
+tracks/14/path = NodePath("DestructibleBlock14")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath("DestructibleBlock15")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/16/type = "method"
+tracks/16/path = NodePath("DestructibleBlock16")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/17/type = "method"
+tracks/17/path = NodePath("DestructibleBlock17")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/18/type = "method"
+tracks/18/path = NodePath("DestructibleBlock18")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/19/type = "method"
+tracks/19/path = NodePath("DestructibleBlock19")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/20/type = "method"
+tracks/20/path = NodePath("DestructibleBlock20")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/21/type = "method"
+tracks/21/path = NodePath("DestructibleBlock21")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/22/type = "method"
+tracks/22/path = NodePath("DestructibleBlock22")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/23/type = "method"
+tracks/23/path = NodePath("DestructibleBlock23")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/24/type = "method"
+tracks/24/path = NodePath("DestructibleBlock24")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/25/type = "method"
+tracks/25/path = NodePath("DestructibleBlock25")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/26/type = "method"
+tracks/26/path = NodePath("DestructibleBlock26")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/27/type = "method"
+tracks/27/path = NodePath("DestructibleBlock27")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/28/type = "method"
+tracks/28/path = NodePath("DestructibleBlock28")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=74]
 length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Boulder:frame")
@@ -392,7 +534,7 @@ tracks/2/keys = {
 "values": [ Vector2( -1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=75]
 length = 1.66667
 step = 0.0833333
 tracks/0/type = "value"
@@ -408,7 +550,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=76]
 length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("PlayerRobot:position")
@@ -493,12 +635,11 @@ frame = 3
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 312, 224 )
+position = Vector2( 315.102, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -508,7 +649,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 10.2882, 9.95481 )
-shape = SubResource( 1 )
+shape = SubResource( 38 )
 
 [node name="Boulder" type="Sprite" parent="."]
 position = Vector2( 192, 160 )
@@ -517,16 +658,16 @@ hframes = 21
 
 [node name="CrystalButton" type="AnimatedSprite" parent="."]
 position = Vector2( 552, 208 )
-frames = SubResource( 36 )
+frames = SubResource( 73 )
 animation = "idle"
-frame = 11
+frame = 10
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Cutscene1 = SubResource( 37 )
-anims/RESET = SubResource( 38 )
-anims/falling-rock = SubResource( 39 )
-anims/run = SubResource( 40 )
+anims/RESET = SubResource( 74 )
+anims/falling-rock = SubResource( 75 )
+anims/run = SubResource( 76 )
 
 [node name="DestructibleBlock" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1824, 192 )
@@ -611,30 +752,6 @@ position = Vector2( 176, 192 )
 
 [node name="DestructibleBlock28" parent="." instance=ExtResource( 7 )]
 position = Vector2( 176, 208 )
-
-[node name="DestructibleBlock29" parent="." instance=ExtResource( 7 )]
-position = Vector2( 160, 192 )
-
-[node name="DestructibleBlock30" parent="." instance=ExtResource( 7 )]
-position = Vector2( 160, 208 )
-
-[node name="DestructibleBlock31" parent="." instance=ExtResource( 7 )]
-position = Vector2( 144, 192 )
-
-[node name="DestructibleBlock32" parent="." instance=ExtResource( 7 )]
-position = Vector2( 144, 208 )
-
-[node name="DestructibleBlock33" parent="." instance=ExtResource( 7 )]
-position = Vector2( 128, 192 )
-
-[node name="DestructibleBlock34" parent="." instance=ExtResource( 7 )]
-position = Vector2( 128, 208 )
-
-[node name="DestructibleBlock35" parent="." instance=ExtResource( 7 )]
-position = Vector2( 112, 192 )
-
-[node name="DestructibleBlock36" parent="." instance=ExtResource( 7 )]
-position = Vector2( 112, 208 )
 
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
