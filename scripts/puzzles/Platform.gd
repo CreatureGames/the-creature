@@ -7,6 +7,7 @@ export(float) var duration : float
 export(bool) var horizontal : bool
 onready var _origin : Vector2 = position
 var _destination : Vector2
+var _signal_count : int = 0 # how many buttons are keeping platform in place?
 
 func _ready():
 	_destination = get_node(destination).position
@@ -15,30 +16,39 @@ func _ready():
 	else:
 		_destination.x = _origin.x
 
-func go_forward():
-	$Tween.stop(self)
-	$Tween.interpolate_property(
-		self,
-		"position",
-		position,
-		_destination,
-		_calc_duration(_destination),
-		Tween.TRANS_LINEAR
-	)
-	$Tween.start()
-	emit_signal("going_forward")
+# _body param makes function callable by area entered/exited events
+func go_forward(_body=null):
+	_signal_count += 1
+	if _signal_count == 1:
+		$Tween.stop_all()
+		$Tween.remove_all()
+		$Tween.interpolate_property(
+			self,
+			"position",
+			position,
+			_destination,
+			_calc_duration(_destination),
+			Tween.TRANS_LINEAR
+		)
+		$Tween.start()
+		emit_signal("going_forward")
 
-func go_backward():
-	$Tween.stop(self)
-	$Tween.interpolate_property(
-		self,
-		"position",
-		position,
-		_origin,
-		_calc_duration(_origin),
-		Tween.TRANS_LINEAR
-	)
-	$Tween.start()
+# _body param makes function callable by area entered/exited events
+func go_backward(_body=null):
+	_signal_count -= 1
+	_signal_count = max(0, _signal_count)
+	if _signal_count == 0:
+		$Tween.stop_all()
+		$Tween.remove_all()
+		$Tween.interpolate_property(
+			self,
+			"position",
+			position,
+			_origin,
+			_calc_duration(_origin),
+			Tween.TRANS_LINEAR
+		)
+		$Tween.start()
 
 func _calc_duration(target):
 	var full = _origin.distance_to(_destination)

@@ -19,12 +19,17 @@ func anim_finish():
 	elif player.anim.animation != "sit":
 		player.anim.play("sit")
 
-func physics_update(_delta: float) -> void:
+func physics_update(delta: float) -> void:
 	# If you have platforms that break when standing on them, you need that check for 
 	# the character to fall.
+	player.velocity += (player.gravity) * delta
+	player.velocity.y = sign(player.velocity.y) * clamp(abs(player.velocity.y), 0, player.max_fall_speed)
+	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
+	
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 		return
+	
 	if player.enabled:
 		if Input.is_action_just_pressed("jump"):
 			state_machine.transition_to("Air", {do_jump = true})

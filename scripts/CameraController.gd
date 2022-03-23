@@ -16,7 +16,3 @@ func _process(delta):
 
 func set_zoom(_body, zoom : float = default_zoom):
 	target_zoom = zoom
-
-
-func open():
-	pass # Replace with function body.
