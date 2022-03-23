@@ -29,3 +29,9 @@ func detection_zone_exited(body) -> void:
 	players.erase(body)
 	if players.empty():
 		$StateMachine.transition_to("FlyToCeiling")
+
+func drill_hit():
+	die()
+
+func die():
+	queue_free()

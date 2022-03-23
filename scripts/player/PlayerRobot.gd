@@ -10,6 +10,8 @@ onready var creature_backpack : AnimatedSprite = $CreatureBackpack
 onready var launch_point : Position2D = $LauchPoint
 onready var drill_offset : Vector2 = $DrillSprite.position
 onready var drill_offset2 : Vector2 = $Drill.get_node("CollisionShape2D").position
+onready var drill : KinematicBody2D = $Drill
+onready var drillsprite : AnimatedSprite = $DrillSprite
 
 var idle_timer := 0.0
 const idle_timer_threshold = 5.0 # snooze for creature
@@ -20,6 +22,7 @@ func _ready():
 	get_node(creature).visible = false
 	get_node(creature).disable()
 	cam.set_target(self)
+	enable_drill()
 
 func _process(delta):
 	creature_backpack.visible = has_creature
@@ -65,6 +68,17 @@ func get_battery():
 
 func recharge_battery():
 	set_battery(MAX_BATTERY)
+	
+func disable_drill():
+	drill.set_collision_layer_bit(1, false)
+	drill.set_collision_mask_bit(1, false)
+	drill.visible = false
+	
+func enable_drill():
+	drillsprite.play("deploy")
+	
+func drill_progress():
+	drillsprite.play("active")
 
 func set_facing(left: bool):
 	anim.flip_h = left
