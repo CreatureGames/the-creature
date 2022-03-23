@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.675926, 0.884259 )
+colors = PoolColorArray( 1, 1, 0, 1, 1, 1, 0, 1, 1, 0.113725, 0, 0.643137 )
+
+[node name="SparkParticles" type="CPUParticles2D"]
+emitting = false
+amount = 32
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2( 0, -1 )
+gravity = Vector2( 0, 200 )
+initial_velocity = 111.11
+initial_velocity_random = 0.28
+color_ramp = SubResource( 1 )

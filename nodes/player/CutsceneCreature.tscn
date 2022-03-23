@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/animations/Creature.tres" type="SpriteFrames" id=1]
+
+[node name="CutsceneCreature" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, -16 )
+frames = ExtResource( 1 )
+animation = "idle"
