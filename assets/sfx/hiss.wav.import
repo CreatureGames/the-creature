@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/drill2.wav-016aaf8ed54a7a040f3d62250ee8573f.sample"
+path="res://.import/hiss.wav-032bd2e56afd13985ca323ae9eac50db.sample"
 
 [deps]
 
-source_file="res://assets/sfx/drill2.wav"
-dest_files=[ "res://.import/drill2.wav-016aaf8ed54a7a040f3d62250ee8573f.sample" ]
+source_file="res://assets/sfx/hiss.wav"
+dest_files=[ "res://.import/hiss.wav-032bd2e56afd13985ca323ae9eac50db.sample" ]
 
 [params]
 

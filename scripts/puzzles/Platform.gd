@@ -32,6 +32,7 @@ func go_forward(_body=null):
 		)
 		$Tween.start()
 		emit_signal("going_forward")
+		$Audio.play()
 
 # _body param makes function callable by area entered/exited events
 func go_backward(_body=null):
@@ -49,8 +50,12 @@ func go_backward(_body=null):
 			Tween.TRANS_LINEAR
 		)
 		$Tween.start()
+		$Audio.play()
 
 func _calc_duration(target):
 	var full = _origin.distance_to(_destination)
 	var part = position.distance_to(target)
 	return (part / full) * duration
+
+func stop_audio():
+	$Audio.stop()

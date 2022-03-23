@@ -4,4 +4,6 @@ func drill_hit():
 	die()
 
 func die():
-	queue_free()
+	$CollisionShape2D.disabled = true
+	$BreakAudio.play()
+	$BreakAudio.connect("finished", self, "queue_free")

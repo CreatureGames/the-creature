@@ -16,6 +16,8 @@ func open():
 			play("open")
 			$CloseCollisionDelay.stop()
 			$OpenCollisionDelay.start()
+			$SlideAudio.stop()
+			$SlideAudio.play()
 		else:
 			$CloseDelay.stop()
 
@@ -27,6 +29,8 @@ func start_closing():
 		$CloseDelay.start()
 
 func close():
+	$SlideAudio.stop()
+	$SlideAudio.play()
 	stop()
 	frame = 0
 	play("close")
