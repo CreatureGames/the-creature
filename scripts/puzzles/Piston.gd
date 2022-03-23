@@ -11,5 +11,5 @@ func _process(_delta):
 		$Line2D.points[1].y = _target.position.y - position.y
 
 func animate():
-	if not is_playing():
-		play("squish")
+	$Audio.play()
+	play("squish")

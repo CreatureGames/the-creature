@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/drill2.wav-016aaf8ed54a7a040f3d62250ee8573f.sample"
+path="res://.import/click2.wav-632e8890d33b7ecbbfcf9cbb02ee48bd.sample"
 
 [deps]
 
-source_file="res://assets/sfx/drill2.wav"
-dest_files=[ "res://.import/drill2.wav-016aaf8ed54a7a040f3d62250ee8573f.sample" ]
+source_file="res://assets/sfx/click2.wav"
+dest_files=[ "res://.import/click2.wav-632e8890d33b7ecbbfcf9cbb02ee48bd.sample" ]
 
 [params]
 

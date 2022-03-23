@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/images/puzzles/door.png" type="Texture" id=1]
 [ext_resource path="res://scripts/puzzles/Door.gd" type="Script" id=2]
+[ext_resource path="res://assets/sfx/slide.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -153,6 +154,11 @@ one_shot = true
 
 [node name="CloseDelay" type="Timer" parent="."]
 one_shot = true
+
+[node name="SlideAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -6.0
+bus = "SFX"
 
 [connection signal="timeout" from="OpenCollisionDelay" to="." method="disable_collision"]
 [connection signal="timeout" from="CloseCollisionDelay" to="." method="enable_collision"]
