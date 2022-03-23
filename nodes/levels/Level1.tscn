@@ -169,7 +169,7 @@ animations = [ {
 
 [sub_resource type="Animation" id=37]
 resource_name = "Cutscene1"
-length = 30.0
+length = 40.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("CutsceneRobot:position:x")
 tracks/0/interp = 1
@@ -177,8 +177,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0, 597.55, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 312, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1.8, 2.5, 17.4876, 20, 25.8687, 28.0187 )
+"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0, 597.55, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 312, -0.25, 0, 0.25, 0, 200.756, -0.25, 0, 0.25, 0, 200.756, -0.25, 0, 0.27, 31.149, 292.4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.8, 2.5, 17.4876, 20, 25.8687, 28.0187, 32, 32.6192, 33.0792 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("CutsceneRobot:position:y")
@@ -187,8 +187,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 3, 20 )
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.18, 0.159698, 222.926, -0.150002, -0.0381012, 0.0299988, 0.867477, 224.002, -0.330002, -0.491364, 0.32, -0.0667267 ),
+"times": PoolRealArray( 0, 3, 20, 32, 32.2992, 32.6192, 32.9992, 33.1792 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CutsceneRobot:scale")
@@ -197,10 +197,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 20.9606, 20.9906, 23.8487, 23.8787 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 20.9606, 20.9906, 23.8487, 23.8787, 32.2792, 32.2992 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CutsceneRobot/DrillSprite:visible")
@@ -209,10 +209,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 18.7, 20.2, 26.1587 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 18.7, 20.2, 26.1587, 32.2292 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false, true, false, true ]
+"values": [ false, true, false, true, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CutsceneRobot/CreatureBackpack:visible")
@@ -245,10 +245,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 3, 17.5, 20.0006, 25.8887, 25.9087 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 17.5, 20.0006, 25.8887, 25.9087, 32.0792, 32.5992, 32.7192 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "run", "idle", "run", "idle", "idle", "run" ]
+"values": [ "run", "idle", "run", "idle", "idle", "run", "idle", "run", "hurt" ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("CutsceneRobot/Robot:frame")
@@ -325,9 +325,12 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 27.9426 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/14/type = "method"
 tracks/14/path = NodePath("DestructibleBlock14")
@@ -336,9 +339,12 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 27.9326 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/15/type = "method"
 tracks/15/path = NodePath("DestructibleBlock15")
@@ -347,9 +353,12 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 28.6226 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/16/type = "method"
 tracks/16/path = NodePath("DestructibleBlock16")
@@ -358,9 +367,12 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 28.6226 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/17/type = "method"
 tracks/17/path = NodePath("DestructibleBlock17")
@@ -369,9 +381,12 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 29.1826 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/18/type = "method"
 tracks/18/path = NodePath("DestructibleBlock18")
@@ -380,9 +395,12 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 29.1826 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/19/type = "method"
 tracks/19/path = NodePath("DestructibleBlock19")
@@ -391,9 +409,12 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 29.7026 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/20/type = "method"
 tracks/20/path = NodePath("DestructibleBlock20")
@@ -402,9 +423,12 @@ tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 29.7026 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/21/type = "method"
 tracks/21/path = NodePath("DestructibleBlock21")
@@ -413,9 +437,12 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 30.2426 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/22/type = "method"
 tracks/22/path = NodePath("DestructibleBlock22")
@@ -424,9 +451,12 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 30.2426 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/23/type = "method"
 tracks/23/path = NodePath("DestructibleBlock23")
@@ -435,9 +465,12 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 30.7826 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/24/type = "method"
 tracks/24/path = NodePath("DestructibleBlock24")
@@ -446,9 +479,12 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 30.7826 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/25/type = "method"
 tracks/25/path = NodePath("DestructibleBlock25")
@@ -457,9 +493,12 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 31.3126 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/26/type = "method"
 tracks/26/path = NodePath("DestructibleBlock26")
@@ -468,9 +507,12 @@ tracks/26/loop_wrap = true
 tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 31.3226 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/27/type = "method"
 tracks/27/path = NodePath("DestructibleBlock27")
@@ -479,9 +521,12 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 31.9326 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
 }
 tracks/28/type = "method"
 tracks/28/path = NodePath("DestructibleBlock28")
@@ -490,9 +535,24 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 31.9226 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "die"
+} ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Boulder:frame")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 31.96, 32.0433, 32.1267, 32.21, 32.2933, 32.3767, 32.46, 32.5433, 32.6267, 32.71, 32.7933, 32.8767, 32.96, 33.0433, 33.1267, 33.21, 33.2933, 33.3767, 33.46, 33.5433 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
 }
 
 [sub_resource type="Animation" id=74]
@@ -635,11 +695,15 @@ frame = 3
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 315.102, 224 )
+position = Vector2( 215.256, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
+frame = 7
+playing = true
+
+[node name="DrillSprite" parent="CutsceneRobot" index="3"]
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -660,7 +724,7 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 10
+frame = 12
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -706,51 +770,67 @@ position = Vector2( 784, 192 )
 position = Vector2( 784, 208 )
 
 [node name="DestructibleBlock13" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 288, 192 )
 
 [node name="DestructibleBlock14" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 288, 208 )
 
 [node name="DestructibleBlock15" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 272, 192 )
 
 [node name="DestructibleBlock16" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 272, 208 )
 
 [node name="DestructibleBlock17" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 256, 192 )
 
 [node name="DestructibleBlock18" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 256, 208 )
 
 [node name="DestructibleBlock19" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 240, 192 )
 
 [node name="DestructibleBlock20" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 240, 208 )
 
 [node name="DestructibleBlock21" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 224, 192 )
 
 [node name="DestructibleBlock22" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 224, 208 )
 
 [node name="DestructibleBlock23" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 208, 192 )
 
 [node name="DestructibleBlock24" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 208, 208 )
 
 [node name="DestructibleBlock25" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 192, 192 )
 
 [node name="DestructibleBlock26" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 192, 208 )
 
 [node name="DestructibleBlock27" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 176, 192 )
 
 [node name="DestructibleBlock28" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 176, 208 )
 
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
