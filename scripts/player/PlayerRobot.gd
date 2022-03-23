@@ -22,7 +22,9 @@ func _ready():
 	get_node(creature).visible = false
 	get_node(creature).disable()
 	cam.set_target(self)
-	enable_drill()
+	drillsprite.visible = false
+	drillsprite.playing = false
+	drill.disable()
 
 func _process(delta):
 	creature_backpack.visible = has_creature
@@ -69,16 +71,22 @@ func get_battery():
 func recharge_battery():
 	set_battery(MAX_BATTERY)
 	
-func disable_drill():
-	drill.set_collision_layer_bit(1, false)
-	drill.set_collision_mask_bit(1, false)
-	drill.visible = false
-	
-func enable_drill():
-	drillsprite.play("deploy")
+func set_drill_enabled(enable: bool):
+	if enable:
+		drillsprite.visible = true
+		drill.enable()
+		drillsprite.play("deploy")
+	else:
+		drill.disable()
+		drillsprite.play("deploy", true)
 	
 func drill_progress():
-	drillsprite.play("active")
+	if drill_out:
+		if drillsprite.animation != "active":
+			drillsprite.play("active")
+	else:
+		drillsprite.visible = false
+		drillsprite.stop()
 
 func set_facing(left: bool):
 	anim.flip_h = left
@@ -89,3 +97,9 @@ func set_facing(left: bool):
 	$Drill.get_node("CollisionShape2D").position.x = -drill_offset2.x if left else drill_offset2.x
 	$DrillSprite.flip_h = left
 	$DrillSprite.position.x = -drill_offset.x if left else drill_offset.x
+
+func _input(event):
+	if enabled:
+		if event.is_action_pressed("alt_action"):
+			drill_out = not drill_out
+			set_drill_enabled(drill_out)

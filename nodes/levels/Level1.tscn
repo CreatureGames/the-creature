@@ -317,7 +317,7 @@ creature = NodePath("../PlayerCreature")
 
 [node name="AnimatedSprite" parent="PlayerRobot" index="1"]
 animation = "run"
-frame = 2
+frame = 7
 playing = true
 flip_h = true
 
