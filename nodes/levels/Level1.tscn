@@ -86,102 +86,102 @@ region = Rect2( 416, 0, 32, 32 )
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 288, 64, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 320, 64, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 352, 64, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 384, 64, 32, 32 )
+region = Rect2( 96, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 416, 64, 32, 32 )
+region = Rect2( 128, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 160, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 96, 32, 32, 32 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 32, 32, 32 )
+region = Rect2( 96, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 160, 32, 32, 32 )
+region = Rect2( 128, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 160, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 192, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 224, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 96, 64, 32, 32 )
+region = Rect2( 256, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 128, 64, 32, 32 )
+region = Rect2( 288, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=32]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 160, 64, 32, 32 )
+region = Rect2( 320, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=33]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 192, 64, 32, 32 )
+region = Rect2( 352, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 224, 64, 32, 32 )
+region = Rect2( 384, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
 atlas = ExtResource( 6 )
-region = Rect2( 256, 64, 32, 32 )
+region = Rect2( 416, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=36]
 animations = [ {
@@ -190,14 +190,14 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
-"loop": false,
-"name": "recover",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
 "loop": false,
 "name": "interact",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": false,
+"name": "recover",
 "speed": 12.0
 } ]
 
@@ -211,8 +211,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0, 597.55, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1.8, 2.5, 17.4876, 20 )
+"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0, 597.55, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 312, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.8, 2.5, 17.4876, 20, 25.8687, 28.0187 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("CutsceneRobot:position:y")
@@ -231,10 +231,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 20.9606, 20.9906 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 20.9606, 20.9906, 23.8487, 23.8787 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CutsceneRobot/DrillSprite:visible")
@@ -243,10 +243,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 18.7, 20.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 18.7, 20.2, 26.1587 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false, true, false ]
+"values": [ false, true, false, true ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CutsceneRobot/CreatureBackpack:visible")
@@ -279,10 +279,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 3, 17.5, 20.0006 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 17.5, 20.0006, 25.8887, 25.9087 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "run", "idle", "run", "idle" ]
+"values": [ "run", "idle", "run", "idle", "idle", "run" ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("CutsceneRobot/Robot:frame")
@@ -303,8 +303,8 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"points": PoolRealArray( 565.172, -0.25, 0, 0.25, 0, 565.172, -0.25, 0, 0.25, 0, 552.51, 0, 0, 0, 0, 486.88, -0.25, 0, 0.25, 0, 486.88, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 513.682, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 384.397, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 8.3, 8.31, 8.748, 13, 14, 14.3, 17.71, 19.24, 21.5, 22.7806, 24.0106 )
+"points": PoolRealArray( 565.172, -0.25, 0, 0.25, 0, 565.172, -0.25, 0, 0.25, 0, 552.51, 0, 0, 0, 0, 486.88, -0.25, 0, 0.25, 0, 486.88, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 513.682, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 410.228, -0.25, 0, 0.25, 0, 360.579, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8.3, 8.31, 8.748, 13, 14, 14.3, 17.71, 19.24, 21.5, 22.7806, 24.0106, 24.34 )
 }
 tracks/9/type = "bezier"
 tracks/9/path = NodePath("CutsceneCreature:position:y")
@@ -313,8 +313,8 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"points": PoolRealArray( 241.595, 0, 0, 0, 0, 241.595, -0.25, 0, 0.25, 0, 224.134, -0.25, 0, 0.25, 0, 212.777, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.124, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.259, -0.25, 0, 0.25, 0, 224.162, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.119999, -0.465927, 180, -0.25, 0, 0.25, 0, 224, -0.140001, 0.0185852, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 8.26, 8.27, 8.55, 8.8, 11.9869, 12.0969, 12.1869, 12.2869, 12.3969, 14, 14.3, 14.4076, 14.4776, 14.5976, 14.6776, 17.71, 19.24, 21.5406, 21.7206, 21.8906, 24.0106 )
+"points": PoolRealArray( 241.595, 0, 0, 0, 0, 241.595, -0.25, 0, 0.25, 0, 224.134, -0.25, 0, 0.25, 0, 212.777, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.124, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.259, -0.25, 0, 0.25, 0, 224.162, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.119999, -0.465927, 180, -0.25, 0, 0.25, 0, 224, -0.140001, 0.0185852, 0.25, 0, 224, -0.25, 0, 0.1385, -21.0881, 185, -0.1115, 14.278, 0.248501, 6.06816, 224.042, -0.25, 0, 0.3085, 0.176819, 224.042, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8.26, 8.27, 8.55, 8.8, 11.9869, 12.0969, 12.1869, 12.2869, 12.3969, 14, 14.3, 14.4076, 14.5976, 14.6776, 17.71, 19.24, 21.5406, 21.7206, 21.8906, 24.01, 24.25, 24.4185, 24.9785, 25.1798, 25.2874, 25.3574, 25.4476, 25.4774, 25.5574 )
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("CutsceneCreature/AnimatedSprite:animation")
@@ -323,10 +323,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 5.3, 8.3, 8.73, 8.78, 12.9876, 13.9876, 17.71, 19.5451, 21.54, 21.89, 21.8906, 22.0506, 22.8006, 24.01 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 5.3, 8.3, 8.73, 8.78, 12.9876, 13.9876, 17.71, 19.5451, 21.54, 21.89, 21.8906, 22.0506, 22.8006, 24.01, 24.0185, 24.0385, 24.34, 24.6985, 26.3687, 26.4087 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "sleep", "blinkblink", "jump", "land", "idle", "run", "idle", "run", "sit", "jump", "land", "land", "idle", "run", "idle" ]
+"values": [ "sleep", "blinkblink", "jump", "land", "idle", "run", "idle", "run", "sit", "jump", "land", "land", "idle", "run", "idle", "idle", "jump", "land", "idle", "idle", "sit" ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("CutsceneCreature/AnimatedSprite:frame")
@@ -347,10 +347,10 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 8.3, 8.31, 8.78, 12.99, 13, 15.5476, 15.5676, 19.2251, 19.2451 ),
-"transitions": PoolRealArray( 1, 0, 0, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 8.3, 8.31, 8.78, 12.99, 13, 15.5476, 15.5676, 19.2251, 19.2451, 24.7985, 24.8385, 27.3587, 27.3787 ),
+"transitions": PoolRealArray( 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -483,7 +483,7 @@ position = Vector2( 2198, 222 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
-position = Vector2( 513.952, 224 )
+position = Vector2( 360.579, 224.038 )
 scale = Vector2( -1, 1 )
 z_index = -1
 
@@ -493,14 +493,13 @@ frame = 3
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 434.089, 224 )
+position = Vector2( 312, 224 )
+scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-frame = 16
+animation = "run"
+frame = 5
 playing = true
-
-[node name="DrillSprite" parent="CutsceneRobot" index="3"]
-visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1210, 139 )
@@ -520,7 +519,7 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 36 )
 animation = "idle"
-frame = 1
+frame = 11
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
