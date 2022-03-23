@@ -19,6 +19,38 @@ visible = false
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
 
+[node name="LoadingScreen" type="MarginContainer" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LoadingScreen"]
+margin_right = 960.0
+margin_bottom = 536.0
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/LoadingScreen/VBoxContainer"]
+margin_top = 522.0
+margin_right = 960.0
+margin_bottom = 536.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/LoadingScreen/VBoxContainer/HBoxContainer"]
+margin_left = 899.0
+margin_right = 960.0
+margin_bottom = 14.0
+text = "Loading..."
+
 [connection signal="ready" from="." to="." method="main_menu"]
 [connection signal="exit" from="CanvasLayer/MainMenu" to="." method="exit"]
 [connection signal="help_menu" from="CanvasLayer/MainMenu" to="." method="help_menu"]
