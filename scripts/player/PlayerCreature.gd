@@ -11,6 +11,10 @@ func swap_player():
 		get_node(robot).enable()
 		cam.set_target(get_node(robot))
 		disable()
+	$SwitchAudio.play()
+
+func take_damage():
+	$HurtAudio.play()
 
 func set_facing(left: bool):
 	anim.flip_h = left
@@ -38,3 +42,7 @@ func _input(event):
 	if enabled:
 		if event.is_action_pressed("alt_action"):
 			emote("heart")
+
+func jump():
+	.jump()
+	$JumpAudio.play()

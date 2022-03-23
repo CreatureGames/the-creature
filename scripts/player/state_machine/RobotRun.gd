@@ -2,6 +2,7 @@
 extends PlayerState
 
 func enter(msg := {}) -> void:
+	get_node("../../DriveAudio").playing = true
 	if msg.has("jump_buffered"):
 		state_machine.transition_to("Air", {do_jump = true})
 	else:
@@ -22,6 +23,9 @@ func update(delta: float) -> void:
 	var input_direction: Vector2 = player.get_input_direction()
 	if not is_equal_approx(input_direction.x, 0.0):
 		player.set_facing(input_direction.x < 0.0)
+		get_node("../../DriveAudio").stream_paused = false
+	else:
+		get_node("../../DriveAudio").stream_paused = true
 
 func physics_update(delta: float) -> void:
 
@@ -51,3 +55,6 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("Air", {do_jump = true})
 	elif is_equal_approx(input_direction.x, 0.0) and is_equal_approx(player.velocity.x, 0.0):
 		state_machine.transition_to("Idle")
+
+func exit() -> void:
+	get_node("../../DriveAudio").playing = false
