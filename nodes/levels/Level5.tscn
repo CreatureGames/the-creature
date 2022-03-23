@@ -14,19 +14,19 @@
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=13]
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 4 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 4 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 139.5, 24 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 44, 24 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 15.5 )
 
 [node name="Level" type="Node2D"]
@@ -128,7 +128,7 @@ hframes = 3
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1"]
-shape = SubResource( 18 )
+shape = SubResource( 1 )
 
 [node name="Piston1" parent="." instance=ExtResource( 11 )]
 position = Vector2( 896, 552 )
@@ -159,7 +159,7 @@ hframes = 3
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-shape = SubResource( 18 )
+shape = SubResource( 1 )
 
 [node name="Piston2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 960, 552 )
@@ -200,7 +200,7 @@ frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformIntro"]
 position = Vector2( 0, 4 )
-shape = SubResource( 19 )
+shape = SubResource( 2 )
 
 [node name="PlatformIntroStart1" type="Area2D" parent="."]
 position = Vector2( 312, 1208 )
@@ -209,7 +209,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformIntroStart1"]
 position = Vector2( -171.5, 0 )
-shape = SubResource( 20 )
+shape = SubResource( 3 )
 
 [node name="PlatformIntroStart2" type="Area2D" parent="."]
 position = Vector2( 312, 1208 )
@@ -218,7 +218,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformIntroStart2"]
 position = Vector2( 60, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 304, 601 )
@@ -227,7 +227,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 15.5 )
-shape = SubResource( 22 )
+shape = SubResource( 5 )
 
 [node name="Door2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1728, 152 )
@@ -251,16 +251,16 @@ level = NodePath("..")
 [connection signal="released" from="DoorButton2" to="Door" method="start_closing"]
 [connection signal="going_forward" from="Platform1" to="Piston1" method="animate"]
 [connection signal="going_forward" from="Platform2" to="Piston1" method="animate"]
-[connection signal="pressed" from="PlatButton1" to="Platform1" method="go_forward"]
 [connection signal="pressed" from="PlatButton1" to="Platform2" method="go_forward"]
-[connection signal="released" from="PlatButton1" to="Platform1" method="go_backward"]
+[connection signal="pressed" from="PlatButton1" to="Platform1" method="go_forward"]
 [connection signal="released" from="PlatButton1" to="Platform2" method="go_backward"]
-[connection signal="pressed" from="PlatButton2" to="Platform1" method="go_forward"]
+[connection signal="released" from="PlatButton1" to="Platform1" method="go_backward"]
 [connection signal="pressed" from="PlatButton2" to="Platform2" method="go_forward"]
-[connection signal="released" from="PlatButton2" to="Platform1" method="go_backward"]
+[connection signal="pressed" from="PlatButton2" to="Platform1" method="go_forward"]
 [connection signal="released" from="PlatButton2" to="Platform2" method="go_backward"]
-[connection signal="going_forward" from="PlatformIntro" to="PistonIntro1" method="animate"]
+[connection signal="released" from="PlatButton2" to="Platform1" method="go_backward"]
 [connection signal="going_forward" from="PlatformIntro" to="PistonIntro2" method="animate"]
+[connection signal="going_forward" from="PlatformIntro" to="PistonIntro1" method="animate"]
 [connection signal="body_entered" from="PlatformIntroStart1" to="PlatformIntro" method="go_backward"]
 [connection signal="body_exited" from="PlatformIntroStart1" to="PlatformIntro" method="go_forward"]
 [connection signal="body_entered" from="PlatformIntroStart2" to="PlatformIntro" method="go_backward"]

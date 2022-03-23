@@ -16,10 +16,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 31.5 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="Animation" id=2]
-resource_name = "reveal"
+[sub_resource type="Animation" id=3]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("EasterEgg/Cover:color")
@@ -106,11 +105,11 @@ animator = NodePath("Animator")
 
 [node name="Collider" type="CollisionShape2D" parent="EasterEgg"]
 position = Vector2( 254, 357 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Animator" type="AnimationPlayer" parent="EasterEgg"]
 root_node = NodePath("../..")
-anims/reveal = SubResource( 2 )
+anims/reveal = SubResource( 3 )
 
 [node name="Cover" type="Polygon2D" parent="EasterEgg"]
 color = Color( 0.133333, 0.12549, 0.203922, 1 )

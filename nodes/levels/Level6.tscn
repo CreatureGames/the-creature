@@ -12,13 +12,13 @@
 [ext_resource path="res://nodes/puzzles/Platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nodes/puzzles/Piston.tscn" type="PackedScene" id=11]
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 4 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 32 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 56, 56 )
 
 [node name="Level6" type="Node2D"]
@@ -124,7 +124,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1"]
-shape = SubResource( 18 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -159,7 +159,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-shape = SubResource( 18 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -181,7 +181,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 16 )
-shape = SubResource( 19 )
+shape = SubResource( 2 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2( 240, 416 )
@@ -190,14 +190,14 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 728, -88 )
-shape = SubResource( 20 )
+shape = SubResource( 3 )
 
+[connection signal="pressed" from="DoorButton1" to="Platform2" method="go_forward"]
 [connection signal="pressed" from="DoorButton1" to="Door1" method="open"]
 [connection signal="pressed" from="DoorButton1" to="Door4" method="open"]
-[connection signal="pressed" from="DoorButton1" to="Platform2" method="go_forward"]
+[connection signal="released" from="DoorButton1" to="Platform2" method="go_backward"]
 [connection signal="released" from="DoorButton1" to="Door1" method="start_closing"]
 [connection signal="released" from="DoorButton1" to="Door4" method="start_closing"]
-[connection signal="released" from="DoorButton1" to="Platform2" method="go_backward"]
 [connection signal="pressed" from="DoorButton2" to="Door2" method="open"]
 [connection signal="released" from="DoorButton2" to="Door2" method="start_closing"]
 [connection signal="pressed" from="DoorButton3" to="Door3" method="open"]
