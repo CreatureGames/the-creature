@@ -60,7 +60,7 @@ func interact(): # called when creature interacts with robot
 	rejoin_robot()
 
 func take_damage():
-	set_battery(battery_level - 1)
+	set_battery(0)
 
 func set_battery(value):
 	battery_level = clamp(value, 0, MAX_BATTERY)
