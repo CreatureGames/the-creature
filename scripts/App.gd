@@ -7,7 +7,12 @@ const GAME_DATA_PATH = "user://save_game.dat"
 
 var active_menu		= null	# holds the active (visible) menu
 var active_level	= null	# holds the game level currently being played
-var level_num		= 0		# current highest level the player has completed
+var level_num		= 1		# current highest level the player has completed
+
+
+# DEBUGGING
+#func _ready():
+#	save_level_num(1)
 
 
 ######## SCENE MANAGEMENT ########
@@ -15,8 +20,8 @@ var level_num		= 0		# current highest level the player has completed
 # hides main menu and loads proper level
 func play_game() -> void:
 	set_active_menu(null)
-	active_level = load("res://nodes/levels/Level%d.tscn" % level_num).instance()
-	add_child(active_level)
+	level_num = load_level_num()
+	load_level(level_num)
 
 # shows main menu
 func main_menu() -> void:
@@ -30,7 +35,7 @@ func help_menu() -> void:
 
 # saves game data and quits
 func exit() -> void:
-	save_level(level_num)
+	save_level_num(level_num)
 	get_tree().quit()
 
 # pauses or unpauses the game
@@ -50,12 +55,40 @@ func set_active_menu(menu) -> void:
 	if active_menu:
 		active_menu.visible = true
 
+# loads the specified level and returns true if successful
+func load_level(level: int) -> bool:
+	var result = false
+	var path = "res://nodes/levels/Level%d.tscn" % level
+	var f = File.new()
+	if f.file_exists(path):
+		active_level = load(path).instance()
+		add_child(active_level)
+		active_level.connect("completed", self, "level_completed")
+		result = true
+	return result
+
 # removes level from tree and frees resources
 func evict_level() -> void:
 	# save level data if applicable
 	remove_child(active_level)
 	active_level.queue_free()
 	active_level = null
+
+# evicts current level, updates level counter, and loads next level
+func level_completed() -> void:
+	level_num += 1
+	save_level_num(level_num)
+	evict_level()
+	
+	# attempt to load level, but if no more remain...
+	if not load_level(level_num):
+		
+		# reset level for next playthrough
+		level_num = 1
+		save_level_num(level_num)
+		
+		# TODO show credits or something?
+		main_menu()
 
 
 ######## INPUT EVENTS ########
@@ -69,12 +102,8 @@ func _input(event) -> void:
 
 ######## LEVEL DATA ########
 
-# load the player's best level into local variable
-func _ready():
-	level_num = load_level()
-
 # loads a level number from disk
-func load_level() -> int:
+func load_level_num() -> int:
 	var level = 0 # default value of 0
 	var file = File.new()
 	var e = file.open(GAME_DATA_PATH, File.READ)
@@ -85,7 +114,7 @@ func load_level() -> int:
 
 # saves a number to disk, indicating the highest level the player has completed
 # returns true on success
-func save_level(level: int) -> bool:
+func save_level_num(level: int) -> bool:
 	var result = false
 	var file = File.new()
 	var e = file.open(GAME_DATA_PATH, File.WRITE)
