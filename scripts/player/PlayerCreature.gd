@@ -33,3 +33,8 @@ func enable():
 	if interactable:
 		interactable.set_collision_layer_bit(2, true)
 		interactable.set_collision_mask_bit(2, true)
+
+func _input(event):
+	if enabled:
+		if event.is_action_pressed("alt_action"):
+			emote("heart")

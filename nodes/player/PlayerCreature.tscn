@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/animations/Creature.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/player/state_machine/StateMachine.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/player/state_machine/CreatureIdle.gd" type="Script" id=5]
 [ext_resource path="res://scripts/player/PlayerCreature.gd" type="Script" id=6]
 [ext_resource path="res://nodes/Interactable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/player/EmoteBubble.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 5.5 )
@@ -49,6 +50,10 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2( 0, -5.5 )
 shape = SubResource( 2 )
+
+[node name="EmoteBubble" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 0, -10 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine/Idle" method="anim_finish"]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine/Run" method="anim_finish"]

@@ -49,6 +49,10 @@ func _input(event):
 		if event.is_action_pressed("interact"):
 			$Interactable.interact()
 
+func emote(name: String, flip: bool = false):
+	$EmoteBubble.emote(name)
+	$EmoteBubble.flip(flip)
+
 func disable():
 	set_process_input(false)
 	enabled = false

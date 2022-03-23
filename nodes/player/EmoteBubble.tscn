@@ -1,3 +1,28 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="AnimatedSprite" type="AnimatedSprite"]
+[ext_resource path="res://assets/animations/Emotes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scripts/player/EmoteBubble.gd" type="Script" id=2]
+
+[node name="EmoteBubble" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Bubble" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "bubble"
+centered = false
+offset = Vector2( 0, -32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Emote" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "heart"
+centered = false
+offset = Vector2( 0, -32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="animation_finished" from="Bubble" to="." method="bubble_anim_finished"]
+[connection signal="animation_finished" from="Emote" to="." method="emote_anim_finished"]
