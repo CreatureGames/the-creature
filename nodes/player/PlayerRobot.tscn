@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/player/PlayerRobot.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player/state_machine/RobotAir.gd" type="Script" id=2]
@@ -13,6 +13,11 @@
 [ext_resource path="res://assets/animations/Drill.tres" type="SpriteFrames" id=11]
 [ext_resource path="res://scripts/player/Drill.gd" type="Script" id=12]
 [ext_resource path="res://nodes/player/EmoteBubble.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sfx/drill1.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sfx/jump1.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sfx/hurt1.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sfx/switch1.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sfx/drive1.wav" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 3.5, 10 )
@@ -94,6 +99,32 @@ shape = SubResource( 2 )
 [node name="EmoteBubble" parent="." instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 0, -24 )
+
+[node name="DrillAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -6.0
+bus = "SFX"
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -12.0
+bus = "SFX"
+
+[node name="HurtAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -6.0
+bus = "SFX"
+
+[node name="SwitchAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -12.0
+bus = "SFX"
+
+[node name="DriveAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -12.0
+stream_paused = true
+bus = "SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine/Idle" method="anim_finish"]
 [connection signal="animation_finished" from="AnimatedSprite" to="StateMachine/Run" method="anim_finish"]

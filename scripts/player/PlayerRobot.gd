@@ -51,6 +51,7 @@ func swap_player():
 	disable()
 	if has_creature:
 		launch_creature()
+	$SwitchAudio.play()
 
 func rejoin_robot():
 	store_creature()
@@ -61,6 +62,7 @@ func interact(): # called when creature interacts with robot
 
 func take_damage():
 	set_battery(0)
+	$HurtAudio.play()
 
 func set_battery(value):
 	battery_level = clamp(value, 0, MAX_BATTERY)
@@ -81,9 +83,11 @@ func set_drill_enabled(enable: bool):
 		drillsprite.visible = true
 		drill.enable()
 		drillsprite.play("deploy")
+		$DrillAudio.play()
 	else:
 		drill.disable()
 		drillsprite.play("deploy", true)
+		$DrillAudio.stop()
 	
 func drill_progress():
 	if drill_out:
@@ -110,3 +114,8 @@ func _input(event):
 		if event.is_action_pressed("alt_action"):
 			drill_out = not drill_out
 			set_drill_enabled(drill_out)
+
+func jump():
+	.jump()
+	$JumpAudio.play()
+
