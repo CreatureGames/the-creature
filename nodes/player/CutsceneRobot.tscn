@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/images/characters/color-robot-active.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/characters/color-robot-inactive.png" type="Texture" id=2]
+[ext_resource path="res://assets/animations/Robot.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://assets/animations/CreatureRiding.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://assets/animations/Drill.tres" type="SpriteFrames" id=5]
+
+[node name="CutsceneRobot" type="Node2D"]
+
+[node name="BatteryIndicator" type="TextureProgress" parent="."]
+margin_left = -13.5
+margin_top = -19.0
+margin_right = -5.5
+margin_bottom = -9.0
+rect_pivot_offset = Vector2( 13.5, 0 )
+mouse_filter = 2
+step = 20.0
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+fill_mode = 3
+nine_patch_stretch = true
+
+[node name="Robot" type="AnimatedSprite" parent="."]
+position = Vector2( -2.5, -16 )
+frames = ExtResource( 3 )
+animation = "idle"
+
+[node name="CreatureBackpack" type="AnimatedSprite" parent="."]
+position = Vector2( -2.5, -16 )
+frames = ExtResource( 4 )
+animation = "idle"
+
+[node name="DrillSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -3.5, -15 )
+frames = ExtResource( 5 )
+animation = "active"
