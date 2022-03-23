@@ -23,9 +23,13 @@ func anim_finish():
 		player.anim.play("idle")
 		player.creature_backpack.play("idle")
 
-func physics_update(_delta: float) -> void:
+func physics_update(delta: float) -> void:
 	# If you have platforms that break when standing on them, you need that check for 
 	# the character to fall.
+	player.velocity += (player.gravity) * delta
+	player.velocity.y = sign(player.velocity.y) * clamp(abs(player.velocity.y), 0, player.max_fall_speed)
+	player.velocity = player.move_and_slide(player.velocity, Vector2.UP)
+	
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 		return
