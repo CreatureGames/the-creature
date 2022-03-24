@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://nodes/puzzles/Platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=12]
+[ext_resource path="res://assets/images/backgrounds/level4-green.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/backgrounds/level4-midground.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 31.5 )
@@ -30,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 0.68302 ),
 "update": 0,
-"values": [ Color( 0.133333, 0.12549, 0.203922, 1 ), Color( 0.133333, 0.12549, 0.203922, 0 ) ]
+"values": [ Color( 0.105882, 0.113725, 0.164706, 1 ), Color( 0.105882, 0.113725, 0.164706, 0 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -40,15 +42,21 @@ extents = Vector2( 16, 4 )
 script = ExtResource( 12 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( -512, -300 )
+scroll_limit_end = Vector2( 1024, 600 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
+[node name="background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
 
-[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
+[node name="background" type="Sprite" parent="ParallaxBackground/background"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="midground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+
+[node name="Level4-midground" type="Sprite" parent="ParallaxBackground/midground"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -81,7 +89,7 @@ position = Vector2( 26, -10 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 784, 168 )
+position = Vector2( 48, 544 )
 creature = NodePath("../PlayerCreature")
 
 [node name="ZoomOut" type="Area2D" parent="."]
@@ -112,7 +120,7 @@ root_node = NodePath("../..")
 anims/reveal = SubResource( 3 )
 
 [node name="Cover" type="Polygon2D" parent="EasterEgg"]
-color = Color( 0.133333, 0.12549, 0.203922, 1 )
+color = Color( 0.105882, 0.113725, 0.164706, 1 )
 polygon = PoolVector2Array( 288, 327, 288, 381, 162, 381, 162, 314, 162, 144, 129, 144, 129, 65, 149, 65, 149, 48, 271, 48, 270, 327 )
 
 [node name="DestructibleBlock" parent="." instance=ExtResource( 7 )]

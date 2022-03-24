@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.133333, 0.12549, 0.203922, 1 ) ]
+"values": [ Color( 0.105882, 0.113725, 0.164706, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Polygon2D2:color")
@@ -46,7 +46,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.133333, 0.12549, 0.203922, 1 ) ]
+"values": [ Color( 0.105882, 0.113725, 0.164706, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.666667 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.133333, 0.12549, 0.203922, 1 ), Color( 0.133333, 0.12549, 0.203922, 0 ) ]
+"values": [ Color( 0.105882, 0.113725, 0.164706, 1 ), Color( 0.105882, 0.113725, 0.164706, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Polygon2D2:color")
@@ -75,7 +75,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.666667 ),
 "transitions": PoolRealArray( 1, 0.965936 ),
 "update": 0,
-"values": [ Color( 0.133333, 0.12549, 0.203922, 1 ), Color( 0.133333, 0.12549, 0.203922, 0 ) ]
+"values": [ Color( 0.105882, 0.113725, 0.164706, 1 ), Color( 0.105882, 0.113725, 0.164706, 0 ) ]
 }
 
 [node name="Level" type="Node2D"]
@@ -182,11 +182,11 @@ position = Vector2( -11, 362 )
 shape = SubResource( 3 )
 
 [node name="Polygon2D" type="Polygon2D" parent="EasterEgg"]
-color = Color( 0.133333, 0.12549, 0.203922, 1 )
+color = Color( 0.105882, 0.113725, 0.164706, 1 )
 polygon = PoolVector2Array( 112, 413, -3, 413, -3, 375, 112, 375 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="EasterEgg"]
-color = Color( 0.133333, 0.12549, 0.203922, 1 )
+color = Color( 0.105882, 0.113725, 0.164706, 1 )
 polygon = PoolVector2Array( 451, 160, 451, 352, 541, 352, 541, 160 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EasterEgg"]

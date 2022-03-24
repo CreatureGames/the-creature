@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/underground.png-d47d36792d9e0486b1fc932efdae2a89.stex"
+path="res://.import/level4-midground.png-37a9da0e35becfd9c2eade7bd44f42fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tilemaps/underground.png"
-dest_files=[ "res://.import/underground.png-d47d36792d9e0486b1fc932efdae2a89.stex" ]
+source_file="res://assets/images/backgrounds/level4-midground.png"
+dest_files=[ "res://.import/level4-midground.png-37a9da0e35becfd9c2eade7bd44f42fb.stex" ]
 
 [params]
 

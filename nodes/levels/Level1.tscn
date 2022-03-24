@@ -690,16 +690,15 @@ scale = Vector2( -1, 1 )
 z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
-frame = 3
+frame = 10
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 130.567, 224 )
+position = Vector2( 764, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-animation = "run"
-frame = 3
+animation = "hurt"
 playing = true
 
 [node name="CreatureBackpack" parent="CutsceneRobot" index="2"]
@@ -723,13 +722,12 @@ shape = SubResource( 38 )
 position = Vector2( 192, 160 )
 texture = ExtResource( 5 )
 hframes = 21
-frame = 19
 
 [node name="CrystalButton" type="AnimatedSprite" parent="."]
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 12
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
