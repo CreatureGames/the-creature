@@ -5,6 +5,7 @@ offsets = PoolRealArray( 0, 0.675926, 0.884259 )
 colors = PoolColorArray( 1, 1, 0, 1, 1, 1, 0, 1, 1, 0.113725, 0, 0.643137 )
 
 [node name="SparkParticles" type="CPUParticles2D"]
+z_index = 10
 emitting = false
 amount = 32
 lifetime = 1.5

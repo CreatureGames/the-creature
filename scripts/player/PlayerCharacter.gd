@@ -8,6 +8,7 @@ export var jump_apex_time := 0.3
 export var acceleration := 500.0
 export var ground_friction := 500.0
 export var air_friction := 50.0
+export var landing_friction := 1000.0
 export var max_fall_speed := 500.0
 
 var velocity := Vector2.ZERO
