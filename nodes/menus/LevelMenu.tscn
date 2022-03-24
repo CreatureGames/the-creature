@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/LevelMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Heading.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UITheme.tres" type="Theme" id=3]
+
+[node name="LevelMenu" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+buttons_container = NodePath("VBoxContainer/HBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 352.0
+margin_top = 222.0
+margin_right = 672.0
+margin_bottom = 377.0
+custom_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 320.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 2 )
+text = "Levels"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 67.0
+margin_right = 320.0
+margin_bottom = 99.0
+custom_constants/separation = 16
+
+[node name="Level1" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "1"
+
+[node name="Level2" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 48.0
+margin_right = 80.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "2"
+
+[node name="Level3" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 96.0
+margin_right = 128.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "3"
+
+[node name="Level4" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "4"
+
+[node name="Level5" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 192.0
+margin_right = 224.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "5"
+
+[node name="Level6" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 240.0
+margin_right = 272.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "6"
+
+[node name="Level7" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 288.0
+margin_right = 320.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "7"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 123.0
+margin_right = 320.0
+margin_bottom = 155.0
+custom_constants/separation = 32
+alignment = 1
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 144.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+text = "Menu"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 176.0
+margin_right = 320.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+disabled = true
+text = "Play"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/MenuButton" to="." method="menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/PlayButton" to="." method="play_pressed"]
