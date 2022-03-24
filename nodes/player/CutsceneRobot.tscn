@@ -12,11 +12,11 @@
 [node name="CutsceneRobot" type="Node2D"]
 
 [node name="BatteryIndicator" type="TextureProgress" parent="."]
-margin_left = -13.5
+margin_left = -12.0
 margin_top = -19.0
-margin_right = -5.5
-margin_bottom = -9.0
-rect_pivot_offset = Vector2( 13.5, 0 )
+margin_right = -7.0
+margin_bottom = -8.0
+rect_pivot_offset = Vector2( 12, 0 )
 mouse_filter = 2
 step = 20.0
 value = 100.0
@@ -24,9 +24,6 @@ texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
 fill_mode = 3
 nine_patch_stretch = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Robot" type="AnimatedSprite" parent="."]
 position = Vector2( -2.5, -16 )
