@@ -9,9 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 default_control = NodePath("VBoxContainer/HBoxContainer/Level1")
 buttons_container = NodePath("VBoxContainer/HBoxContainer")
 
@@ -54,6 +51,7 @@ focus_neighbour_left = NodePath("../Level1")
 focus_neighbour_right = NodePath("../Level3")
 focus_neighbour_bottom = NodePath("../../HBoxContainer2/MenuButton")
 focus_next = NodePath("../Level3")
+focus_previous = NodePath("../Level1")
 text = "2"
 
 [node name="Level3" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -136,6 +134,9 @@ margin_left = 176.0
 margin_right = 320.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 0, 32 )
+focus_neighbour_left = NodePath("../MenuButton")
+focus_neighbour_top = NodePath("../../HBoxContainer/Level6")
+focus_previous = NodePath("../MenuButton")
 size_flags_horizontal = 3
 disabled = true
 text = "Play"
