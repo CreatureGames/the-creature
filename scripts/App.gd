@@ -20,9 +20,9 @@ func _ready():
 ######## SCENE MANAGEMENT ########
 
 # hides main menu and loads proper level
-func play_game() -> void:
+func play_game(level: int) -> void:
 	set_active_menu(null)
-	level_num = load_level_num()
+	level_num = level
 	load_level(level_num)
 
 # shows main menu
@@ -38,6 +38,11 @@ func help_menu() -> void:
 # shows credits screen
 func credits_menu() -> void:
 	set_active_menu($CanvasLayer/CreditsMenu)
+
+# shows level selection screen
+func level_menu() -> void:
+	set_active_menu($CanvasLayer/LevelMenu)
+	$CanvasLayer/LevelMenu.init_buttons()
 
 # saves game data and quits
 func exit() -> void:
@@ -157,11 +162,16 @@ func load_level_num() -> int:
 # saves a number to disk, indicating the highest level the player has completed
 # returns true on success
 func save_level_num(level: int) -> bool:
-	var result = false
-	var file = File.new()
-	var e = file.open(GAME_DATA_PATH, File.WRITE)
-	if not e: # no error
-		file.store_8(level)
-		file.close()
-		result = true
+	var result = true
+	
+	# only save level if it's bigger than the currently saved one
+	if level > load_level_num():
+		var file = File.new()
+		var e = file.open(GAME_DATA_PATH, File.WRITE)
+		if not e: # no error
+			file.store_8(level)
+			file.close()
+		else: # error saving
+			result = false
+	
 	return result
