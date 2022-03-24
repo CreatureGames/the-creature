@@ -4,6 +4,8 @@
 [ext_resource path="res://scripts/player/EmoteBubble.gd" type="Script" id=2]
 
 [node name="EmoteBubble" type="Node2D"]
+z_index = 50
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="Bubble" type="AnimatedSprite" parent="."]
