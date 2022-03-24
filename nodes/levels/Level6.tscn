@@ -38,7 +38,7 @@ motion_scale = Vector2( 0.5, 0.5 )
 position = Vector2( 432, 256 )
 scale = Vector2( 1.7, 1.7 )
 frames = ExtResource( 14 )
-frame = 24
+frame = 10
 playing = true
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]

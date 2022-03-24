@@ -383,28 +383,35 @@ extents = Vector2( 16, 4 )
 pause_mode = 1
 script = ExtResource( 12 )
 
-[node name="Background" type="Sprite" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -97, -55 )
+scale = Vector2( 0.821667, 0.821667 )
 z_index = -10
 z_as_relative = false
 texture = ExtResource( 13 )
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer/Background"]
 autoplay = "moving_clouds"
 anims/RESET = SubResource( 5 )
 anims/moving_clouds = SubResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="Background"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Background"]
 position = Vector2( 464, 104 )
 z_index = -1
 texture = ExtResource( 14 )
 
-[node name="Sprite2" type="Sprite" parent="Background"]
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Background"]
 position = Vector2( 648, 152 )
 z_index = -1
 texture = ExtResource( 16 )
 
-[node name="Sprite3" type="Sprite" parent="Background"]
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Background"]
 position = Vector2( 496, 32 )
 z_index = -1
 texture = ExtResource( 15 )
@@ -459,7 +466,7 @@ polygon = PoolVector2Array( -78, 31, 82, 143, 162, 143, 314, 15, 314, -41, 58, -
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 147, 112 )
 frames = SubResource( 19 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="EmoteBubble" parent="AnimatedSprite" instance=ExtResource( 20 )]
@@ -477,7 +484,7 @@ shape = SubResource( 49 )
 position = Vector2( 192, 112 )
 frames = SubResource( 32 )
 animation = "New Anim"
-frame = 4
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -486,7 +493,7 @@ rotation = 3.14159
 scale = Vector2( 1, -1 )
 frames = SubResource( 48 )
 animation = "New Anim"
-frame = 5
+frame = 11
 playing = true
 
 [node name="EasterEgg" type="Area2D" parent="."]

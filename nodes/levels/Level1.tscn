@@ -289,13 +289,18 @@ tracks/8/keys = {
 pause_mode = 1
 script = ExtResource( 12 )
 
-[node name="Background1" type="Sprite" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Background1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 96, 0 )
 z_index = -10
 texture = ExtResource( 14 )
 centered = false
 
-[node name="Background2" type="Sprite" parent="."]
+[node name="Background2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 1168, 0 )
 z_index = -10
 texture = ExtResource( 14 )
@@ -352,12 +357,11 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 5
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 1
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -385,7 +389,7 @@ shape = SubResource( 78 )
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
