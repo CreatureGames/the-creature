@@ -35,6 +35,10 @@ func main_menu() -> void:
 func help_menu() -> void:
 	set_active_menu($CanvasLayer/HelpMenu)
 
+# shows credits screen
+func credits_menu() -> void:
+	set_active_menu($CanvasLayer/CreditsMenu)
+
 # saves game data and quits
 func exit() -> void:
 	save_level_num(level_num)
@@ -53,6 +57,7 @@ func toggle_pause() -> void:
 func set_active_menu(menu) -> void:
 	if active_menu:
 		active_menu.visible = false
+		get_tree().paused = false
 	active_menu = menu
 	if active_menu:
 		active_menu.visible = true
@@ -124,8 +129,8 @@ func level_completed() -> void:
 		level_num = 1
 		save_level_num(level_num)
 		
-		# TODO show credits or something?
-		main_menu()
+		# show credits
+		credits_menu()
 
 
 ######## INPUT EVENTS ########
