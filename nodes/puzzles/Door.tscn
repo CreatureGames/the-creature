@@ -157,7 +157,7 @@ one_shot = true
 
 [node name="SlideAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = -6.0
+volume_db = -16.0
 bus = "SFX"
 
 [connection signal="timeout" from="OpenCollisionDelay" to="." method="disable_collision"]

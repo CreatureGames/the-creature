@@ -38,7 +38,7 @@ motion_scale = Vector2( 0.5, 0.5 )
 position = Vector2( 432, 256 )
 scale = Vector2( 1.7, 1.7 )
 frames = ExtResource( 14 )
-frame = 16
+frame = 2
 playing = true
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
@@ -208,12 +208,12 @@ shape = SubResource( 3 )
 position = Vector2( 1008, 368 )
 level = NodePath("..")
 
-[connection signal="pressed" from="DoorButton1" to="Platform2" method="go_forward"]
-[connection signal="pressed" from="DoorButton1" to="Door4" method="open"]
 [connection signal="pressed" from="DoorButton1" to="Door1" method="open"]
-[connection signal="released" from="DoorButton1" to="Platform2" method="go_backward"]
-[connection signal="released" from="DoorButton1" to="Door4" method="start_closing"]
+[connection signal="pressed" from="DoorButton1" to="Door4" method="open"]
+[connection signal="pressed" from="DoorButton1" to="Platform2" method="go_forward"]
 [connection signal="released" from="DoorButton1" to="Door1" method="start_closing"]
+[connection signal="released" from="DoorButton1" to="Door4" method="start_closing"]
+[connection signal="released" from="DoorButton1" to="Platform2" method="go_backward"]
 [connection signal="pressed" from="DoorButton2" to="Door2" method="open"]
 [connection signal="released" from="DoorButton2" to="Door2" method="start_closing"]
 [connection signal="pressed" from="DoorButton3" to="Door3" method="open"]

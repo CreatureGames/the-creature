@@ -466,7 +466,7 @@ polygon = PoolVector2Array( -78, 31, 82, 143, 162, 143, 314, 15, 314, -41, 58, -
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 147, 112 )
 frames = SubResource( 19 )
-frame = 8
+frame = 3
 playing = true
 
 [node name="EmoteBubble" parent="AnimatedSprite" instance=ExtResource( 20 )]
@@ -484,7 +484,7 @@ shape = SubResource( 49 )
 position = Vector2( 192, 112 )
 frames = SubResource( 32 )
 animation = "New Anim"
-frame = 2
+frame = 9
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -493,6 +493,7 @@ rotation = 3.14159
 scale = Vector2( 1, -1 )
 frames = SubResource( 48 )
 animation = "New Anim"
+frame = 10
 playing = true
 
 [node name="EasterEgg" type="Area2D" parent="."]
