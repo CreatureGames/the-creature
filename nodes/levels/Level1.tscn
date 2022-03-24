@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://nodes/player/CutsceneCreature.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/CutscenePlayer.gd" type="Script" id=10]
 [ext_resource path="res://assets/animations/IntroCutscene.tres" type="Animation" id=11]
+[ext_resource path="res://scripts/Level.gd" type="Script" id=12]
+[ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 16.4266, 13.6115 )
@@ -280,6 +282,7 @@ tracks/8/keys = {
 }
 
 [node name="Level" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( -512, -300 )
@@ -343,12 +346,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 2
+frame = 6
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 2
+frame = 6
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -369,7 +372,6 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 10
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
@@ -473,11 +475,17 @@ position = Vector2( 176, 192 )
 [node name="DestructibleBlock28" parent="." instance=ExtResource( 7 )]
 position = Vector2( 176, 208 )
 
+[node name="LevelEnd" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2229, 209 )
+level = NodePath("..")
+
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
 [connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="enable_level_end"]
 [connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
 [connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
+[connection signal="ready" from="LevelEnd" to="." method="disable_level_end"]
 
 [editable path="CutsceneCreature"]
 [editable path="CutsceneRobot"]

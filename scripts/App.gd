@@ -14,7 +14,7 @@ var time_max		= 100	# max time to block loading thread
 
 # DEBUGGING--remove this in the end
 func _ready():
-	save_level_num(2)
+	save_level_num(1)
 
 
 ######## SCENE MANAGEMENT ########
