@@ -10,8 +10,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 41, -0.25, 0, 0.25, 0, 173, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 297, -0.25, 0, 0.25, 0, 392, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2, 2.2, 2.5, 2.8, 3.1, 5, 5.5, 12, 12.2, 12.4, 12.6, 14, 15.5 )
+"points": PoolRealArray( 41, -0.25, 0, 0.25, 0, 173, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 177, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 186, -0.25, 0, 0.25, 0, 344, -0.25, 0, 0.25, 0, 415, -0.25, 0, 0.25, 0, 444, -0.25, 0, 0.25, 0, 596, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 2.2, 2.5, 2.8, 3.1, 5, 5.5, 12, 12.2, 12.4, 12.6, 15.4, 16.6, 17, 17.5 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("CutsceneRobot:position:y")
@@ -20,8 +20,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 219, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 184, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2, 2.2, 2.5, 2.8, 3.1, 5, 5.5, 12, 12.2, 12.4, 12.6, 14, 15.5 )
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 219, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 189, -0.25, 0, 0.25, 0, 189, -0.25, 0, 0.25, 0, 190, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 2.2, 2.5, 2.8, 3.1, 5, 5.5, 12, 12.2, 12.4, 12.6, 15.4, 16.6, 17, 17.5 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CutsceneRobot:scale")
@@ -42,8 +42,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 43, -0.25, 0, 0.25, 0, 165, -0.25, 0, 0.25, 0, 144, -0.25, 0, 0.25, 0, 125, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5, 5.5, 5.9 )
+"points": PoolRealArray( 43, -0.25, 0, 0.25, 0, 165, -0.25, 0, 0.25, 0, 144, -0.25, 0, 0.25, 0, 125, -0.25, 0, 0.25, 0, 125, -0.25, 0, 0.25, 0, 172, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 5.5, 5.9, 12.6, 13.6 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath("CutsceneCreature:position:y")
@@ -52,8 +52,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"points": PoolRealArray( -21, -0.25, 0, 0.25, 0, 206, -0.25, 0, 0.25, 0, 188, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5, 5.5, 5.9 )
+"points": PoolRealArray( -21, -0.25, 0, 0.25, 0, 206, -0.25, 0, 0.25, 0, 188, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 5.5, 5.9, 12.6, 13.6 )
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CutsceneCreature:visible")
@@ -74,10 +74,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 5, 5.9, 6.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 5, 5.9, 6.3, 12.6, 13.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "jump", "land", "idle" ]
+"values": [ "jump", "land", "idle", "run", "idle" ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("CutsceneCreature:scale")
@@ -158,8 +158,8 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"points": PoolRealArray( 157, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 157, -0.25, 0, 0.25, 0, 157, -0.25, 0, 0.25, 0, 281, -0.25, 0, 0.25, 0, 281, -0.25, 0, 0.25, 0, 204, -0.25, 0, 0.25, 0, 204, -0.25, 0, 0.25, 0, 272, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.7, 3.8, 4.7, 5.4, 11.1, 13.6 )
 }
 tracks/14/type = "bezier"
 tracks/14/path = NodePath("CutsceneCameraTarget:position:y")
@@ -168,8 +168,8 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"points": PoolRealArray( 209, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0 )
+"points": PoolRealArray( 209, -0.25, 0, 0.25, 0, 209, -0.25, 0, 0.25, 0, 204, -0.25, 0, 0.25, 0, 204, -0.25, 0, 0.25, 0, 207, -0.25, 0, 0.25, 0, 207, -0.25, 0, 0.25, 0, 204, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.7, 3.8, 4.7, 5.4, 11.1, 13.6 )
 }
 tracks/15/type = "method"
 tracks/15/path = NodePath("CutsceneRobot/EmoteBubble")
@@ -213,4 +213,48 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ Vector2( 38, -27 ), Vector2( 132, -27 ) ]
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("Spaceship:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 385, -0.25, 0, 0.25, 0, 385, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 17.5, 19 )
+}
+tracks/19/type = "bezier"
+tracks/19/path = NodePath("Spaceship:position:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"points": PoolRealArray( 160, -0.25, 0, 0.25, 0, 160, -0.25, 0, 0.25, 0, 94.5148, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 17.5, 19 )
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Spaceship:animation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 4.6, 12.3, 16.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "ramp-open", "still", "door-open", "door-close" ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Spaceship:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 3.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
