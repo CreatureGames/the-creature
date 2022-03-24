@@ -1,0 +1,370 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
+[ext_resource path="res://nodes/player/PlayerCreature.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/CameraController.gd" type="Script" id=4]
+[ext_resource path="res://tilemaps/Aboveground.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/animations/OutroCutscene.tres" type="Animation" id=6]
+[ext_resource path="res://nodes/player/CutsceneRobot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://nodes/player/CutsceneCreature.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=37]
+resource_name = "Cutscene1"
+length = 40.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("CutsceneRobot:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 764.148, -0.25, 0, 0.25, 0, 606.371, -0.25, 0, 0.1, -8.55975, 597.55, -0.25, 0, 0.25, 0, 597.55, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 434.089, -0.25, 0, 0.25, 0, 312, -0.25, 0, 0.25, 0, 200.756, -0.25, 0, 0.25, 0, 200.756, -0.25, 0, 0.27, 31.149, 292.4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.8, 2.5, 17.4876, 20, 25.8687, 28.0187, 32, 32.6192, 33.0792 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("CutsceneRobot:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.18, 0.159698, 222.926, -0.150002, -0.0381012, 0.0299988, 0.867477, 224.002, -0.330002, -0.491364, 0.32, -0.0667267 ),
+"times": PoolRealArray( 0, 3, 20, 32, 32.2992, 32.6192, 32.9992, 33.1792 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CutsceneRobot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 20.9606, 20.9906, 23.8487, 23.8787, 32.2792, 32.2992 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CutsceneRobot/DrillSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 18.7, 20.2, 26.1587, 32.2292 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CutsceneRobot/CreatureBackpack:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CutsceneRobot/BatteryIndicator:value")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 100.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CutsceneRobot/Robot:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3, 17.5, 20.0006, 25.8887, 25.9087, 32.0792, 32.5992, 32.7192 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "run", "idle", "run", "idle", "idle", "run", "idle", "run", "hurt" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CutsceneRobot/Robot:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("CutsceneCreature:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 565.172, -0.25, 0, 0.25, 0, 565.172, -0.25, 0, 0.25, 0, 552.51, 0, 0, 0, 0, 486.88, -0.25, 0, 0.25, 0, 486.88, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 440.161, -0.25, 0, 0.25, 0, 513.682, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 514, -0.25, 0, 0.25, 0, 410.228, -0.25, 0, 0.25, 0, 360.579, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8.3, 8.31, 8.748, 13, 14, 14.3, 17.71, 19.24, 21.5, 22.7806, 24.0106, 24.34 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("CutsceneCreature:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 241.595, 0, 0, 0, 0, 241.595, -0.25, 0, 0.25, 0, 224.134, -0.25, 0, 0.25, 0, 212.777, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.124, -0.25, 0, 0.25, 0, 224.027, -0.25, 0, 0.25, 0, 220.259, -0.25, 0, 0.25, 0, 224.162, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.119999, -0.465927, 180, -0.25, 0, 0.25, 0, 224, -0.140001, 0.0185852, 0.25, 0, 224, -0.25, 0, 0.1385, -21.0881, 185, -0.1115, 14.278, 0.248501, 6.06816, 224.042, -0.25, 0, 0.3085, 0.176819, 224.042, -0.25, 0, 0.25, 0, 224, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0, 220.282, -0.25, 0, 0.25, 0, 224.038, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 8.26, 8.27, 8.55, 8.8, 11.9869, 12.0969, 12.1869, 12.2869, 12.3969, 14, 14.3, 14.4076, 14.5976, 14.6776, 17.71, 19.24, 21.5406, 21.7206, 21.8906, 24.01, 24.25, 24.4185, 24.9785, 25.1798, 25.2874, 25.3574, 25.4476, 25.4774, 25.5574 )
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CutsceneCreature/AnimatedSprite:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 5.3, 8.3, 8.73, 8.78, 12.9876, 13.9876, 17.71, 19.5451, 21.54, 21.89, 21.8906, 22.0506, 22.8006, 24.01, 24.0185, 24.0385, 24.34, 24.6985, 26.3687, 26.4087 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "sleep", "blinkblink", "jump", "land", "idle", "run", "idle", "run", "sit", "jump", "land", "land", "idle", "run", "idle", "idle", "jump", "land", "idle", "idle", "sit" ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("CutsceneCreature/AnimatedSprite:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("CutsceneCreature:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 8.3, 8.31, 8.78, 12.99, 13, 15.5476, 15.5676, 19.2251, 19.2451, 24.7985, 24.8385, 27.3587, 27.3787 ),
+"transitions": PoolRealArray( 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CutsceneRobot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 764, 224 ), Vector2( 575, 224 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CutsceneRobot:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("CutsceneRobot:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("CutsceneRobot:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("CutsceneRobot:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 41, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("CutsceneRobot:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("CutsceneCreature:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 43, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("CutsceneCreature:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( -21, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CutsceneCreature:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+length = 1.66667
+step = 0.0833333
+
+[sub_resource type="Animation" id=76]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerRobot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 768, 224 ), Vector2( 600, 224 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlayerRobot/AnimatedSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "run", "idle" ]
+}
+
+[node name="Level" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( -512, -300 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 65537, -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65537, -65533, 0, 65537, -65532, 0, 65537, -65531, 0, 65537, -65530, 0, 65537, -65529, 0, 65537, -65528, 0, 65537, -65527, 0, 65537, -65526, 0, 65537, -65525, 0, 65537, 65535, 0, 65537, 64, 0, 65537, 131071, 0, 65537, 65600, 0, 65537, 196607, 0, 65537, 131136, 0, 65537, 262143, 0, 65537, 196672, 0, 65537, 327679, 0, 65537, 262208, 0, 65537, 393215, 0, 65537, 327744, 0, 65537, 458751, 0, 65537, 393280, 0, 65537, 524287, 0, 65537, 458816, 0, 65537, 589823, 0, 65537, 524352, 0, 65537, 655359, 0, 65537, 589888, 0, 65537, 720895, 0, 65537, 655424, 0, 65537, 786431, 0, 65537, 720960, 0, 65537, 851967, 0, 65537, 786496, 0, 65537, 917503, 0, 65537, 852032, 0, 65537, 983039, 0, 65537, 917504, 0, 1, 917505, 0, 1, 917506, 0, 1, 917507, 0, 1, 917508, 0, 1, 917509, 0, 1, 917510, 0, 1, 917511, 0, 1, 917512, 0, 1, 917513, 0, 1, 917514, 0, 1, 917515, 0, 1, 917516, 0, 1, 917517, 0, 1, 917518, 0, 1, 917519, 0, 1, 917520, 0, 1, 917521, 0, 1, 917522, 0, 1, 917523, 0, 1, 917524, 0, 1, 917525, 0, 1, 917526, 0, 1, 917527, 0, 1, 917528, 0, 1, 917529, 0, 1, 917530, 0, 1, 917531, 0, 1, 917532, 0, 1, 917533, 0, 1, 917534, 0, 1, 917535, 0, 1, 917536, 0, 1, 917537, 0, 1, 917538, 0, 1, 917539, 0, 1, 917540, 0, 1, 917541, 0, 1, 917542, 0, 1, 917543, 0, 1, 917544, 0, 1, 917545, 0, 1, 917546, 0, 1, 917547, 0, 1, 917548, 0, 1, 917549, 0, 1, 917550, 0, 1, 917551, 0, 1, 917552, 0, 1, 917553, 0, 1, 917554, 0, 1, 917555, 0, 1, 917556, 0, 1, 917557, 0, 1, 917558, 0, 1, 917559, 0, 1, 917560, 0, 1, 917561, 0, 1, 917562, 0, 1, 917563, 0, 1, 917564, 0, 1, 917565, 0, 1, 917566, 0, 1, 917567, 0, 1, 917568, 0, 65537, 1048575, 0, 65537, 983040, 0, 65537, 983041, 0, 65537, 983042, 0, 65537, 983043, 0, 65537, 983044, 0, 65537, 983045, 0, 65537, 983046, 0, 65537, 983047, 0, 65537, 983048, 0, 65537, 983049, 0, 65537, 983050, 0, 65537, 983051, 0, 65537, 983052, 0, 65537, 983053, 0, 65537, 983054, 0, 65537, 983055, 0, 65537, 983056, 0, 65537, 983057, 0, 65537, 983058, 0, 65537, 983059, 0, 65537, 983060, 0, 65537, 983061, 0, 65537, 983062, 0, 65537, 983063, 0, 65537, 983064, 0, 65537, 983065, 0, 65537, 983066, 0, 65537, 983067, 0, 65537, 983068, 0, 65537, 983069, 0, 65537, 983070, 0, 65537, 983071, 0, 65537, 983072, 0, 65537, 983073, 0, 65537, 983074, 0, 65537, 983075, 0, 65537, 983076, 0, 65537, 983077, 0, 65537, 983078, 0, 65537, 983079, 0, 65537, 983080, 0, 65537, 983081, 0, 65537, 983082, 0, 65537, 983083, 0, 65537, 983084, 0, 65537, 983085, 0, 65537, 983086, 0, 65537, 983087, 0, 65537, 983088, 0, 65537, 983089, 0, 65537, 983090, 0, 65537, 983091, 0, 65537, 983092, 0, 65537, 983093, 0, 65537, 983094, 0, 65537, 983095, 0, 65537, 983096, 0, 65537, 983097, 0, 65537, 983098, 0, 65537, 983099, 0, 65537, 983100, 0, 65537, 983101, 0, 65537, 983102, 0, 65537, 983103, 0, 65537, 983104, 0, 65537, 1114111, 0, 65537, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 65537, 1048585, 0, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, 0, 65537, 1048589, 0, 65537, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 65537, 1048594, 0, 65537, 1048595, 0, 65537, 1048596, 0, 65537, 1048597, 0, 65537, 1048598, 0, 65537, 1048599, 0, 65537, 1048600, 0, 65537, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65537, 1048607, 0, 65537, 1048608, 0, 65537, 1048609, 0, 65537, 1048610, 0, 65537, 1048611, 0, 65537, 1048612, 0, 65537, 1048613, 0, 65537, 1048614, 0, 65537, 1048615, 0, 65537, 1048616, 0, 65537, 1048617, 0, 65537, 1048618, 0, 65537, 1048619, 0, 65537, 1048620, 0, 65537, 1048621, 0, 65537, 1048622, 0, 65537, 1048623, 0, 65537, 1048624, 0, 65537, 1048625, 0, 65537, 1048626, 0, 65537, 1048627, 0, 65537, 1048628, 0, 65537, 1048629, 0, 65537, 1048630, 0, 65537, 1048631, 0, 65537, 1048632, 0, 65537, 1048633, 0, 65537, 1048634, 0, 65537, 1048635, 0, 65537, 1048636, 0, 65537, 1048637, 0, 65537, 1048638, 0, 65537, 1048639, 0, 65537, 1048640, 0, 65537, 1179647, 0, 65537, 1114112, 0, 65537, 1114113, 0, 65537, 1114114, 0, 65537, 1114115, 0, 65537, 1114116, 0, 65537, 1114117, 0, 65537, 1114118, 0, 65537, 1114119, 0, 65537, 1114120, 0, 65537, 1114121, 0, 65537, 1114122, 0, 65537, 1114123, 0, 65537, 1114124, 0, 65537, 1114125, 0, 65537, 1114126, 0, 65537, 1114127, 0, 65537, 1114128, 0, 65537, 1114129, 0, 65537, 1114130, 0, 65537, 1114131, 0, 65537, 1114132, 0, 65537, 1114133, 0, 65537, 1114134, 0, 65537, 1114135, 0, 65537, 1114136, 0, 65537, 1114137, 0, 65537, 1114138, 0, 65537, 1114139, 0, 65537, 1114140, 0, 65537, 1114141, 0, 65537, 1114142, 0, 65537, 1114143, 0, 65537, 1114144, 0, 65537, 1114145, 0, 65537, 1114146, 0, 65537, 1114147, 0, 65537, 1114148, 0, 65537, 1114149, 0, 65537, 1114150, 0, 65537, 1114151, 0, 65537, 1114152, 0, 65537, 1114153, 0, 65537, 1114154, 0, 65537, 1114155, 0, 65537, 1114156, 0, 65537, 1114157, 0, 65537, 1114158, 0, 65537, 1114159, 0, 65537, 1114160, 0, 65537, 1114161, 0, 65537, 1114162, 0, 65537, 1114163, 0, 65537, 1114164, 0, 65537, 1114165, 0, 65537, 1114166, 0, 65537, 1114167, 0, 65537, 1114168, 0, 65537, 1114169, 0, 65537, 1114170, 0, 65537, 1114171, 0, 65537, 1114172, 0, 65537, 1114173, 0, 65537, 1114174, 0, 65537, 1114175, 0, 65537, 1114176, 0, 65537, 1245183, 0, 65537, 1179648, 0, 65537, 1179649, 0, 65537, 1179650, 0, 65537, 1179651, 0, 65537, 1179652, 0, 65537, 1179653, 0, 65537, 1179654, 0, 65537, 1179655, 0, 65537, 1179656, 0, 65537, 1179657, 0, 65537, 1179658, 0, 65537, 1179659, 0, 65537, 1179660, 0, 65537, 1179661, 0, 65537, 1179662, 0, 65537, 1179663, 0, 65537, 1179664, 0, 65537, 1179665, 0, 65537, 1179666, 0, 65537, 1179667, 0, 65537, 1179668, 0, 65537, 1179669, 0, 65537, 1179670, 0, 65537, 1179671, 0, 65537, 1179672, 0, 65537, 1179673, 0, 65537, 1179674, 0, 65537, 1179675, 0, 65537, 1179676, 0, 65537, 1179677, 0, 65537, 1179678, 0, 65537, 1179679, 0, 65537, 1179680, 0, 65537, 1179681, 0, 65537, 1179682, 0, 65537, 1179683, 0, 65537, 1179684, 0, 65537, 1179685, 0, 65537, 1179686, 0, 65537, 1179687, 0, 65537, 1179688, 0, 65537, 1179689, 0, 65537, 1179690, 0, 65537, 1179691, 0, 65537, 1179692, 0, 65537, 1179693, 0, 65537, 1179694, 0, 65537, 1179695, 0, 65537, 1179696, 0, 65537, 1179697, 0, 65537, 1179698, 0, 65537, 1179699, 0, 65537, 1179700, 0, 65537, 1179701, 0, 65537, 1179702, 0, 65537, 1179703, 0, 65537, 1179704, 0, 65537, 1179705, 0, 65537, 1179706, 0, 65537, 1179707, 0, 65537, 1179708, 0, 65537, 1179709, 0, 65537, 1179710, 0, 65537, 1179711, 0, 65537, 1179712, 0, 65537 )
+
+[node name="CameraController" type="Node2D" parent="."]
+position = Vector2( 157, 208 )
+script = ExtResource( 4 )
+zoom_speed = 1.5
+
+[node name="Camera2D" type="Camera2D" parent="CameraController"]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+limit_left = 0
+limit_top = 0
+limit_right = 1018
+limit_bottom = 300
+smoothing_enabled = true
+offset_v = -0.2
+drag_margin_left = 0.6
+drag_margin_top = 0.6
+drag_margin_right = 0.6
+drag_margin_bottom = 0.3
+editor_draw_limits = true
+
+[node name="PlayerCreature" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4, -23 )
+robot = NodePath("../PlayerRobot")
+
+[node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
+position = Vector2( 23, 220 )
+creature = NodePath("../PlayerCreature")
+
+[node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
+position = Vector2( 43, -21 )
+z_index = -1
+
+[node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
+frame = 3
+playing = true
+
+[node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
+position = Vector2( 41, 224 )
+
+[node name="Robot" parent="CutsceneRobot" index="1"]
+animation = "run"
+frame = 3
+playing = true
+
+[node name="DrillSprite" parent="CutsceneRobot" index="3"]
+visible = false
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Cutscene1 = SubResource( 37 )
+anims/OutroCutscene = ExtResource( 6 )
+anims/RESET = SubResource( 74 )
+anims/falling-rock = SubResource( 75 )
+anims/run = SubResource( 76 )
+
+[editable path="CutsceneCreature"]
+[editable path="CutsceneRobot"]
