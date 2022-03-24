@@ -29,7 +29,7 @@ extents = Vector2( 44, 24 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 15.5 )
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource( 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -251,16 +251,16 @@ level = NodePath("..")
 [connection signal="released" from="DoorButton2" to="Door" method="start_closing"]
 [connection signal="going_forward" from="Platform1" to="Piston1" method="animate"]
 [connection signal="going_forward" from="Platform2" to="Piston1" method="animate"]
-[connection signal="pressed" from="PlatButton1" to="Platform2" method="go_forward"]
 [connection signal="pressed" from="PlatButton1" to="Platform1" method="go_forward"]
-[connection signal="released" from="PlatButton1" to="Platform2" method="go_backward"]
+[connection signal="pressed" from="PlatButton1" to="Platform2" method="go_forward"]
 [connection signal="released" from="PlatButton1" to="Platform1" method="go_backward"]
-[connection signal="pressed" from="PlatButton2" to="Platform2" method="go_forward"]
+[connection signal="released" from="PlatButton1" to="Platform2" method="go_backward"]
 [connection signal="pressed" from="PlatButton2" to="Platform1" method="go_forward"]
-[connection signal="released" from="PlatButton2" to="Platform2" method="go_backward"]
+[connection signal="pressed" from="PlatButton2" to="Platform2" method="go_forward"]
 [connection signal="released" from="PlatButton2" to="Platform1" method="go_backward"]
-[connection signal="going_forward" from="PlatformIntro" to="PistonIntro2" method="animate"]
+[connection signal="released" from="PlatButton2" to="Platform2" method="go_backward"]
 [connection signal="going_forward" from="PlatformIntro" to="PistonIntro1" method="animate"]
+[connection signal="going_forward" from="PlatformIntro" to="PistonIntro2" method="animate"]
 [connection signal="body_entered" from="PlatformIntroStart1" to="PlatformIntro" method="go_backward"]
 [connection signal="body_exited" from="PlatformIntroStart1" to="PlatformIntro" method="go_forward"]
 [connection signal="body_entered" from="PlatformIntroStart2" to="PlatformIntro" method="go_backward"]

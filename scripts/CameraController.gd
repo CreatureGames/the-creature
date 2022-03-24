@@ -6,6 +6,8 @@ var target
 onready var default_zoom : float = $Camera2D.zoom.x
 onready var target_zoom : float = default_zoom
 
+export(NodePath) var cutscene_camera_target
+
 func set_target(_target):
 	target = _target
 
@@ -16,3 +18,9 @@ func _process(delta):
 
 func set_zoom(_body, zoom : float = default_zoom):
 	target_zoom = zoom
+
+func start_cutscene(_scene: String):
+	set_target(get_node(cutscene_camera_target))
+	
+func stop_cutscene(_scene: String):
+	set_target(get_parent().get_node("PlayerRobot"))

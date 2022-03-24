@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://nodes/puzzles/DestructibleBlock.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nodes/player/CutsceneRobot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://nodes/player/CutsceneCreature.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/CutscenePlayer.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 16.4266, 13.6115 )
@@ -166,6 +167,9 @@ animations = [ {
 "name": "recover",
 "speed": 12.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 18, 32 )
 
 [sub_resource type="Animation" id=37]
 resource_name = "Cutscene1"
@@ -554,6 +558,55 @@ tracks/29/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
 }
+tracks/30/type = "value"
+tracks/30/path = NodePath("PlayerRobot:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0, 45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/31/type = "method"
+tracks/31/path = NodePath("PlayerRobot")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0, 45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable"
+}, {
+"args": [  ],
+"method": "enable"
+} ]
+}
+tracks/32/type = "bezier"
+tracks/32/path = NodePath("CutsceneCameraTarget:position:x")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"points": PoolRealArray( 641, -0.25, 0, 0.25, 0, 570, -0.25, 0, 0.25, 0, 570, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0, 350, -0.25, 0, 0.25, 0, 250, -0.25, 0, 0.25, 0, 250, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.28993, 17.5, 20.1, 22.8, 23.9, 26.2, 27.9, 31.9, 32.9, 34.1 )
+}
+tracks/33/type = "bezier"
+tracks/33/path = NodePath("CutsceneCameraTarget:position:y")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"points": PoolRealArray( 206, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.28993, 17.5, 20.1, 22.8, 23.9, 26.2, 27.9, 31.9, 32.9, 34.1 )
+}
 
 [sub_resource type="Animation" id=74]
 length = 20.0
@@ -592,6 +645,26 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -1, 1 ) ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("CutsceneCameraTarget:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 641, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("CutsceneCameraTarget:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 206, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=75]
@@ -660,6 +733,7 @@ tile_data = PoolIntArray( 0, 1073741828, 0, 1, 1073741828, 0, 2, 1073741828, 0, 
 position = Vector2( 2199, 208 )
 script = ExtResource( 4 )
 zoom_speed = 1.5
+cutscene_camera_target = NodePath("../CutsceneCameraTarget")
 
 [node name="Camera2D" type="Camera2D" parent="CameraController"]
 current = true
@@ -681,16 +755,17 @@ position = Vector2( 198, -14 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2198, 222 )
+visible = false
+position = Vector2( 848, 222 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
-position = Vector2( 284.207, -11.5227 )
-scale = Vector2( -1, 1 )
+position = Vector2( 565.172, 241.595 )
 z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
-frame = 10
+animation = "sleep"
+frame = 3
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -698,15 +773,12 @@ position = Vector2( 764, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-animation = "hurt"
+animation = "run"
+frame = 4
 playing = true
-
-[node name="CreatureBackpack" parent="CutsceneRobot" index="2"]
-visible = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -727,14 +799,27 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 7
+frame = 12
 playing = true
+
+[node name="CutsceneCameraTarget" type="Position2D" parent="."]
+position = Vector2( 641, 206 )
+
+[node name="CutsceneTrigger" type="Area2D" parent="."]
+position = Vector2( 758, 170 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CutsceneTrigger"]
+position = Vector2( 8, 22 )
+shape = SubResource( 77 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Cutscene1 = SubResource( 37 )
 anims/RESET = SubResource( 74 )
 anims/falling-rock = SubResource( 75 )
 anims/run = SubResource( 76 )
+script = ExtResource( 10 )
 
 [node name="DestructibleBlock" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1824, 192 )
@@ -838,6 +923,9 @@ position = Vector2( 176, 208 )
 
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
+[connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
+[connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
+[connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
 
 [editable path="CutsceneCreature"]
 [editable path="CutsceneRobot"]

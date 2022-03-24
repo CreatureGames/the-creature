@@ -316,7 +316,6 @@ script = ExtResource( 4 )
 zoom_speed = 1.5
 
 [node name="Camera2D" type="Camera2D" parent="CameraController"]
-current = true
 zoom = Vector2( 0.3, 0.3 )
 limit_left = 0
 limit_top = 0
@@ -339,11 +338,12 @@ position = Vector2( 23, 220 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
+visible = false
 position = Vector2( 43, -21 )
 z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
-frame = 3
+frame = 1
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -351,12 +351,15 @@ position = Vector2( 41, 224 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 3
+frame = 6
 playing = true
+
+[node name="CreatureBackpack" parent="CutsceneRobot" index="2"]
+visible = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 1
+frame = 5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
