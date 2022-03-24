@@ -1,31 +1,260 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/HelpMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Heading.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UITheme.tres" type="Theme" id=3]
 
 [node name="HelpMenu" type="CenterContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 488.0
-margin_top = 281.0
-margin_right = 536.0
-margin_bottom = 319.0
+margin_left = 268.0
+margin_top = 149.0
+margin_right = 756.0
+margin_bottom = 450.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 48.0
-margin_bottom = 14.0
-text = "Help!"
+margin_right = 488.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 2 )
+text = "Help"
+align = 1
+
+[node name="Legend" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 51.0
+margin_right = 488.0
+margin_bottom = 73.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Legend"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Action"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Legend"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Keyboard"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Legend"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Controller"
+align = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 488.0
+margin_bottom = 85.0
+
+[node name="Move" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 93.0
+margin_right = 488.0
+margin_bottom = 115.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Move"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Move"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Move"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "A/D, Left/Right"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Move"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Joystick Left"
+align = 2
+
+[node name="Jump" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 123.0
+margin_right = 488.0
+margin_bottom = 145.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Jump"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Jump"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Jump"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Space, W, Up"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Jump"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "A"
+align = 2
+
+[node name="Swap" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 153.0
+margin_right = 488.0
+margin_bottom = 175.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Swap"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Swap characters"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Swap"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "F"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Swap"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Y"
+align = 2
+
+[node name="Join" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 183.0
+margin_right = 488.0
+margin_bottom = 205.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Join"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Join characters"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Join"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "E"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Join"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "X"
+align = 2
+
+[node name="Alternate" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 213.0
+margin_right = 488.0
+margin_bottom = 235.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Alternate"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Alternate action"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Alternate"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Q"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Alternate"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "B"
+align = 2
+
+[node name="Pause" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 243.0
+margin_right = 488.0
+margin_bottom = 265.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="Label" parent="VBoxContainer/Pause"]
+margin_right = 160.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Pause"
+
+[node name="Keyboard" type="Label" parent="VBoxContainer/Pause"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Esc, P"
+align = 1
+
+[node name="Controller" type="Label" parent="VBoxContainer/Pause"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 160, 0 )
+text = "Start"
+align = 2
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
-margin_top = 18.0
-margin_right = 48.0
-margin_bottom = 38.0
+margin_left = 215.0
+margin_top = 273.0
+margin_right = 273.0
+margin_bottom = 301.0
+size_flags_horizontal = 4
 text = "Menu"
 
 [connection signal="button_down" from="VBoxContainer/MenuButton" to="." method="menu_pressed"]
