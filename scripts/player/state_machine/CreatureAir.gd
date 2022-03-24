@@ -1,8 +1,8 @@
 # Air.gd
 extends PlayerState
 
-const coyote_jump_threshold := 0.05 # 3 frames @ 60fps
-const jump_buffer_threshold := 0.05
+const coyote_jump_threshold := 0.067 # 4 frames @ 60fps
+const jump_buffer_threshold := 0.067
 
 var jump_pressed := false
 var time_since_jump_pressed := 0.0 # for jump buffering

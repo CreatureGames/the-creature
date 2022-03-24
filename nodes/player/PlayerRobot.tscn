@@ -30,6 +30,7 @@ extents = Vector2( 6.5, 13.5 )
 [node name="PlayerRobot" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
+jump_height = 40.0
 ground_friction = 800.0
 air_friction = 60.0
 
