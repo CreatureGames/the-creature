@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.887805, 1 )
+colors = PoolColorArray( 0.4, 0.419608, 0.45098, 1, 0.4, 0.419608, 0.45098, 0.957348, 0.4, 0.419608, 0.45098, 0.352941 )
+
+[node name="BlockBreakParticles" type="CPUParticles2D"]
+position = Vector2( 8, 8 )
+emitting = false
+amount = 128
+lifetime = 0.4
+one_shot = true
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 8, 8 )
+direction = Vector2( 0, -1 )
+spread = 180.0
+gravity = Vector2( 0, 300 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+color_ramp = SubResource( 1 )

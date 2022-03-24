@@ -152,7 +152,7 @@ tracks/1/keys = {
 "values": [ Color( 0.105882, 0.113725, 0.164706, 1 ), Color( 0.105882, 0.113725, 0.164706, 0 ) ]
 }
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 11 )
 
@@ -243,7 +243,7 @@ position = Vector2( 320, 80 )
 [node name="EasterEggCreature" type="AnimatedSprite" parent="."]
 position = Vector2( 480, 192 )
 frames = SubResource( 21 )
-frame = 6
+frame = 5
 playing = true
 
 [node name="EmoteBubble" parent="EasterEggCreature" instance=ExtResource( 14 )]
