@@ -66,10 +66,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 33.1, 35.1, 42.1, 43.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 100.0 ]
+"values": [ 100.0, 100.0, 0.0, 0.0, 100.0 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("CutsceneRobot/Robot:animation")
@@ -158,7 +158,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 27.9426 ),
+"times": PoolRealArray( 27.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -172,7 +172,7 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 27.9326 ),
+"times": PoolRealArray( 27.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -186,7 +186,7 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 28.6226 ),
+"times": PoolRealArray( 28.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -200,7 +200,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 28.6226 ),
+"times": PoolRealArray( 28.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -214,7 +214,7 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 29.1826 ),
+"times": PoolRealArray( 29.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -228,7 +228,7 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 29.1826 ),
+"times": PoolRealArray( 29.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -242,7 +242,7 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 29.7026 ),
+"times": PoolRealArray( 29.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -256,7 +256,7 @@ tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray( 29.7026 ),
+"times": PoolRealArray( 29.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -270,7 +270,7 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray( 30.2426 ),
+"times": PoolRealArray( 30.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -284,7 +284,7 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 30.2426 ),
+"times": PoolRealArray( 30.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -298,7 +298,7 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray( 30.7826 ),
+"times": PoolRealArray( 30.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -312,7 +312,7 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 30.7826 ),
+"times": PoolRealArray( 30.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -326,7 +326,7 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"times": PoolRealArray( 31.3126 ),
+"times": PoolRealArray( 31.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -340,7 +340,7 @@ tracks/26/loop_wrap = true
 tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/keys = {
-"times": PoolRealArray( 31.3226 ),
+"times": PoolRealArray( 31.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -354,7 +354,7 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = {
-"times": PoolRealArray( 31.9326 ),
+"times": PoolRealArray( 31.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -368,7 +368,7 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 31.9226 ),
+"times": PoolRealArray( 31.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -386,4 +386,108 @@ tracks/29/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("PlayerRobot:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0, 45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/31/type = "method"
+tracks/31/path = NodePath("PlayerRobot")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0, 0.1, 45 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable"
+}, {
+"args": [ false ],
+"method": "set_drill_enabled"
+}, {
+"args": [  ],
+"method": "enable"
+} ]
+}
+tracks/32/type = "bezier"
+tracks/32/path = NodePath("CutsceneCameraTarget:position:x")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"points": PoolRealArray( 641, -0.25, 0, 0.25, 0, 570, -0.25, 0, 0.25, 0, 570, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0, 350, -0.25, 0, 0.25, 0, 250, -0.25, 0, 0.25, 0, 250, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.28993, 17.5, 20.1, 22.8, 23.9, 26.2, 27.9, 31.9, 32.9, 34.1 )
+}
+tracks/33/type = "bezier"
+tracks/33/path = NodePath("CutsceneCameraTarget:position:y")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"points": PoolRealArray( 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0, 215, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.3, 17.5, 20.1, 22.8, 23.9, 26.2, 27.9, 31.9, 32.9, 34.1 )
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("CutsceneRobot:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/35/type = "method"
+tracks/35/path = NodePath("CutsceneRobot/SparkParticles")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 32.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+tracks/36/type = "method"
+tracks/36/path = NodePath("CutsceneRobot/CPUParticles2D")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 33.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("CutsceneRobot/CPUParticles2D:emitting")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 37 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
