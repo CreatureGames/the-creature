@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/images/backgrounds/underground-background.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 16.4266, 13.6115 )
+extents = Vector2( 17.836, 12.0545 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 6 )
@@ -73,26 +73,6 @@ region = Rect2( 384, 0, 32, 32 )
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 6 )
 region = Rect2( 416, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 6 )
-region = Rect2( 288, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 6 )
-region = Rect2( 320, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 6 )
-region = Rect2( 352, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 6 )
-region = Rect2( 384, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 6 )
-region = Rect2( 416, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 6 )
@@ -154,6 +134,26 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 6 )
 region = Rect2( 256, 64, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 6 )
+region = Rect2( 288, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 6 )
+region = Rect2( 320, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 6 )
+region = Rect2( 352, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 6 )
+region = Rect2( 384, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 6 )
+region = Rect2( 416, 64, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=73]
 animations = [ {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
@@ -161,14 +161,14 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
-"loop": false,
-"name": "recover",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
 "loop": false,
 "name": "interact",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
+"loop": false,
+"name": "recover",
 "speed": 12.0
 } ]
 
@@ -338,7 +338,7 @@ z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
 animation = "sleep"
-frame = 1
+frame = 5
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -348,12 +348,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 1
+frame = 7
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 1
+frame = 7
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -362,6 +362,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 14.4999, -3 )
 scale = Vector2( 10.2882, 9.95481 )
 shape = SubResource( 38 )
 
