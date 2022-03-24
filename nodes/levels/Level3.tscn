@@ -243,7 +243,7 @@ position = Vector2( 320, 80 )
 [node name="EasterEggCreature" type="AnimatedSprite" parent="."]
 position = Vector2( 480, 192 )
 frames = SubResource( 21 )
-frame = 6
+frame = 9
 playing = true
 
 [node name="EmoteBubble" parent="EasterEggCreature" instance=ExtResource( 14 )]
