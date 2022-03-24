@@ -1,21 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
 [ext_resource path="res://nodes/player/PlayerCreature.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/CameraController.gd" type="Script" id=4]
-[ext_resource path="res://nodes/enemies/Bat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://nodes/puzzles/Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nodes/puzzles/DestructibleBlock.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nodes/puzzles/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=9]
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/images/backgrounds/underground-background.png" type="Texture" id=11]
-
-[sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 687, 111, 658, 153, 605, 155, 579, 145, 579, 123, 638, 49, 527, 210, 607, 210, 606, 232, 579, 252, 528, 255, 498, 241, 496, 223, 609, 289, 690, 290, 688, 335, 499, 332, 498, 302, 606, 274, 527, 271, 498, 93, 288, 95, 288, 50, 604, 187, 526, 187, 526, 145, 527, 124, 495, 128, 436, 282, 434, 260, 471, 241, 445, 217, 419, 192, 440, 131 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 9, 10, 11, 12 ), PoolIntArray( 13, 14, 15, 16, 17 ), PoolIntArray( 18, 13, 17, 19 ), PoolIntArray( 20, 21, 22, 5 ), PoolIntArray( 3, 2, 23, 24, 25 ), PoolIntArray( 20, 5, 4, 26 ), PoolIntArray( 27, 20, 26, 25 ), PoolIntArray( 19, 17, 28, 29, 30, 11, 10 ), PoolIntArray( 27, 24, 6, 12, 31, 32, 33 ), PoolIntArray( 27, 25, 24 ) ]
-outlines = [ PoolVector2Array( 638, 49, 687, 111, 658, 153, 605, 155, 604, 187, 526, 187, 527, 210, 607, 210, 606, 232, 579, 252, 528, 255, 527, 271, 606, 274, 609, 289, 690, 290, 688, 335, 499, 332, 498, 302, 436, 282, 434, 260, 471, 241, 498, 241, 496, 223, 445, 217, 419, 192, 440, 131, 495, 128, 498, 93, 288, 95, 288, 50 ), PoolVector2Array( 527, 124, 526, 145, 579, 145, 579, 123 ) ]
 
 [node name="Level2" type="Node2D"]
 pause_mode = 1
@@ -73,23 +67,12 @@ position = Vector2( 32, 96 )
 creature = NodePath("../PlayerCreature")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 position = Vector2( 552, 183 )
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -135, 110, -21, 75, 139, 102, 137, -135, -136, -134 )
-
-[node name="Bat" parent="." instance=ExtResource( 5 )]
-position = Vector2( 609, 49 )
-nav2D = NodePath("../Navigation2D")
-
-[node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-navpoly = SubResource( 1 )
 
 [node name="Door1" parent="." instance=ExtResource( 8 )]
 position = Vector2( 281, 80 )
