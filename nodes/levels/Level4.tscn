@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/images/characters/secret-creature-idle-3.png" type="Texture" id=18]
 [ext_resource path="res://assets/images/characters/secret-creature-idle-4.png" type="Texture" id=19]
 [ext_resource path="res://nodes/player/EmoteBubble.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/images/control-tips.png" type="Texture" id=21]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -457,7 +458,6 @@ position = Vector2( -11, -18 )
 shape = SubResource( 1 )
 
 [node name="ZoomIn" type="Area2D" parent="."]
-visible = false
 position = Vector2( 758, 161 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ZoomIn"]
@@ -466,7 +466,7 @@ polygon = PoolVector2Array( -78, 31, 82, 143, 162, 143, 314, 15, 314, -41, 58, -
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 147, 112 )
 frames = SubResource( 19 )
-frame = 2
+frame = 8
 playing = true
 
 [node name="EmoteBubble" parent="AnimatedSprite" instance=ExtResource( 20 )]
@@ -484,7 +484,7 @@ shape = SubResource( 49 )
 position = Vector2( 192, 112 )
 frames = SubResource( 32 )
 animation = "New Anim"
-frame = 8
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -493,7 +493,6 @@ rotation = 3.14159
 scale = Vector2( 1, -1 )
 frames = SubResource( 48 )
 animation = "New Anim"
-frame = 7
 playing = true
 
 [node name="EasterEgg" type="Area2D" parent="."]
@@ -563,6 +562,12 @@ target = NodePath("../Platform")
 [node name="LevelEnd" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1056, 160 )
 level = NodePath("..")
+
+[node name="Control-tips" type="Sprite" parent="."]
+position = Vector2( 1051, 241 )
+texture = ExtResource( 21 )
+hframes = 5
+frame = 3
 
 [connection signal="body_entered" from="ZoomOut" to="CameraController" method="set_zoom" binds= [ 0.55 ]]
 [connection signal="body_entered" from="ZoomIn" to="CameraController" method="set_zoom" binds= [ 0.4 ]]
