@@ -162,7 +162,7 @@ position = Vector2( 1056, 160 )
 level = NodePath("..")
 
 [connection signal="body_entered" from="ZoomOut" to="CameraController" method="set_zoom" binds= [ 0.55 ]]
-[connection signal="body_entered" from="ZoomIn" to="CameraController" method="set_zoom"]
+[connection signal="body_entered" from="ZoomIn" to="CameraController" method="set_zoom" binds= [ 0.4 ]]
 [connection signal="body_exited" from="ZoomIn" to="CameraController" method="set_zoom" binds= [ 0.55 ]]
 [connection signal="body_entered" from="EasterEgg" to="EasterEgg" method="reveal"]
 [connection signal="pressed" from="PlatformButton" to="Platform" method="go_forward"]

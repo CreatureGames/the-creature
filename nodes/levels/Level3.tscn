@@ -118,7 +118,7 @@ position = Vector2( 26, -10 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 25, 79 )
+position = Vector2( 32, 96 )
 creature = NodePath("../PlayerCreature")
 
 [node name="Area2D" type="Area2D" parent="."]
