@@ -5,11 +5,14 @@ extends Node
 # https://docs.godotengine.org/en/3.4/tutorials/io/data_paths.html
 const GAME_DATA_PATH = "user://save_game.dat"
 
+export var tile_map : NodePath
+
 var active_menu		= null	# holds the active (visible) menu
 var active_level	= null	# holds the game level currently being played
 var level_num		= 1		# current highest level the player has completed
 var loader			= null	# used for async level loading
 var time_max		= 100	# max time to block loading thread
+onready var _menu_tiles = get_node(tile_map)
 
 
 # DEBUGGING--remove this in the end
@@ -24,6 +27,7 @@ func play_game(level: int) -> void:
 	set_active_menu(null)
 	level_num = level
 	load_level(level_num)
+	get_tree().paused = false
 
 # shows main menu
 func main_menu() -> void:
@@ -62,10 +66,15 @@ func toggle_pause() -> void:
 func set_active_menu(menu) -> void:
 	if active_menu:
 		active_menu.visible = false
-		get_tree().paused = false
 	active_menu = menu
 	if active_menu:
 		active_menu.visible = true
+		
+		if active_menu != $CanvasLayer/PauseMenu:
+			if not has_node(_menu_tiles.name):
+				add_child(_menu_tiles)
+	elif has_node(_menu_tiles.name):
+		remove_child(_menu_tiles)
 
 # loads the specified level and returns true if successful
 func load_level(level: int) -> bool:
