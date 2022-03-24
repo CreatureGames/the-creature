@@ -15,11 +15,6 @@ var time_max		= 100	# max time to block loading thread
 onready var _menu_tiles = get_node(tile_map)
 
 
-# DEBUGGING--remove this in the end
-func _ready():
-	save_level_num(1)
-
-
 ######## SCENE MANAGEMENT ########
 
 # hides main menu and loads proper level
