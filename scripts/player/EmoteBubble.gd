@@ -45,3 +45,6 @@ func _show_emote_image():
 	emote.visible = true
 	emote.frame = 0
 	emote.play()
+
+func emote_enter(body, name : String):
+	emote(name)
