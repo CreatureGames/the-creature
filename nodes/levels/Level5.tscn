@@ -29,7 +29,7 @@ extents = Vector2( 44, 24 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 15.5 )
 
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 13 )
 
