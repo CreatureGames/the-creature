@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/CameraController.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/puzzles/platform.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://nodes/puzzles/Piston.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=12]
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/animations/OverworldBackground.tres" type="SpriteFrames" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 4 )
@@ -32,6 +33,13 @@ scroll_base_offset = Vector2( -512, -300 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 432, 256 )
+scale = Vector2( 1.7, 1.7 )
+frames = ExtResource( 14 )
+frame = 24
+playing = true
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
 tile_set = ExtResource( 4 )
