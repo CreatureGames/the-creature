@@ -12,6 +12,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+default_control = NodePath("VBoxContainer/HBoxContainer/Level1")
 buttons_container = NodePath("VBoxContainer/HBoxContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -39,6 +40,9 @@ custom_constants/separation = 16
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_right = NodePath("../Level2")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/MenuButton")
+focus_next = NodePath("../Level2")
 text = "1"
 
 [node name="Level2" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -46,6 +50,10 @@ margin_left = 48.0
 margin_right = 80.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_left = NodePath("../Level1")
+focus_neighbour_right = NodePath("../Level3")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/MenuButton")
+focus_next = NodePath("../Level3")
 text = "2"
 
 [node name="Level3" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -53,6 +61,11 @@ margin_left = 96.0
 margin_right = 128.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_left = NodePath("../Level2")
+focus_neighbour_right = NodePath("../Level4")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/MenuButton")
+focus_next = NodePath("../Level4")
+focus_previous = NodePath("../Level2")
 text = "3"
 
 [node name="Level4" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -60,6 +73,11 @@ margin_left = 144.0
 margin_right = 176.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_left = NodePath("../Level3")
+focus_neighbour_right = NodePath("../Level5")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/MenuButton")
+focus_next = NodePath("../Level5")
+focus_previous = NodePath("../Level3")
 text = "4"
 
 [node name="Level5" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -67,6 +85,11 @@ margin_left = 192.0
 margin_right = 224.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_left = NodePath("../Level4")
+focus_neighbour_right = NodePath("../Level6")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/PlayButton")
+focus_next = NodePath("../Level6")
+focus_previous = NodePath("../Level4")
 text = "5"
 
 [node name="Level6" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -74,6 +97,11 @@ margin_left = 240.0
 margin_right = 272.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_left = NodePath("../Level5")
+focus_neighbour_right = NodePath("../Level7")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/PlayButton")
+focus_next = NodePath("../Level7")
+focus_previous = NodePath("../Level5")
 text = "6"
 
 [node name="Level7" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -81,6 +109,9 @@ margin_left = 288.0
 margin_right = 320.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+focus_neighbour_left = NodePath("../Level6")
+focus_neighbour_bottom = NodePath("../../HBoxContainer2/PlayButton")
+focus_previous = NodePath("../Level6")
 text = "7"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
@@ -94,6 +125,9 @@ alignment = 1
 margin_right = 144.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 0, 32 )
+focus_neighbour_top = NodePath("../../HBoxContainer/Level1")
+focus_neighbour_right = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
 size_flags_horizontal = 3
 text = "Menu"
 

@@ -37,12 +37,16 @@ align = 1
 margin_top = 51.0
 margin_right = 120.0
 margin_bottom = 79.0
+focus_neighbour_bottom = NodePath("../MenuButton")
+focus_next = NodePath("../MenuButton")
 text = "Play"
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
 margin_top = 87.0
 margin_right = 120.0
 margin_bottom = 115.0
+focus_neighbour_top = NodePath("../PlayButton")
+focus_previous = NodePath("../PlayButton")
 text = "Menu"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="play_pressed"]

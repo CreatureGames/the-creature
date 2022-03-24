@@ -24,14 +24,14 @@ tile_map = NodePath("Background")
 [node name="HelpMenu" parent="CanvasLayer" instance=ExtResource( 3 )]
 visible = false
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
-visible = false
-
 [node name="LevelMenu" parent="CanvasLayer" instance=ExtResource( 9 )]
 visible = false
 app = NodePath("../..")
 
 [node name="CreditsMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
 
 [node name="LoadingScreen" type="MarginContainer" parent="CanvasLayer"]
@@ -95,8 +95,8 @@ tile_data = PoolIntArray( 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4,
 [connection signal="help_menu" from="CanvasLayer/MainMenu" to="." method="help_menu"]
 [connection signal="play_game" from="CanvasLayer/MainMenu" to="." method="level_menu"]
 [connection signal="main_menu" from="CanvasLayer/HelpMenu" to="." method="main_menu"]
-[connection signal="main_menu" from="CanvasLayer/PauseMenu" to="." method="main_menu"]
-[connection signal="play_game" from="CanvasLayer/PauseMenu" to="." method="toggle_pause"]
 [connection signal="main_menu" from="CanvasLayer/LevelMenu" to="." method="main_menu"]
 [connection signal="play_level" from="CanvasLayer/LevelMenu" to="." method="play_game"]
 [connection signal="main_menu" from="CanvasLayer/CreditsMenu" to="." method="main_menu"]
+[connection signal="main_menu" from="CanvasLayer/PauseMenu" to="." method="main_menu"]
+[connection signal="play_game" from="CanvasLayer/PauseMenu" to="." method="toggle_pause"]

@@ -3,6 +3,7 @@ extends CenterContainer
 signal main_menu
 signal play_level
 
+export var default_control : NodePath
 export var app : NodePath
 export var buttons_container : NodePath
 var _app : Node

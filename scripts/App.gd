@@ -64,6 +64,8 @@ func set_active_menu(menu) -> void:
 	active_menu = menu
 	if active_menu:
 		active_menu.visible = true
+		if active_menu.default_control:
+			active_menu.get_node(active_menu.default_control).grab_focus()
 		
 		if active_menu != $CanvasLayer/PauseMenu:
 			if not has_node(_menu_tiles.name):
