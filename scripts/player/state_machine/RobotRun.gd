@@ -34,7 +34,8 @@ func physics_update(delta: float) -> void:
 	if not is_equal_approx(input_direction.x, 0.0):
 		accel_x = player.acceleration * input_direction
 	else:
-		accel_x = -sign(player.velocity.x) * player.ground_friction * Vector2.RIGHT
+		var friction = player.ground_friction if player.anim.animation != "land" else player.landing_friction
+		accel_x = -sign(player.velocity.x) * friction * Vector2.RIGHT
 		# handle stopping due to friction
 		if sign(player.velocity.x + accel_x.x*delta) * sign(player.velocity.x) < 0: #change in direction
 			if not is_zero_approx(delta):
