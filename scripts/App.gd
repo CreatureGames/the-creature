@@ -157,7 +157,7 @@ func _input(event) -> void:
 
 # loads a level number from disk
 func load_level_num() -> int:
-	var level = 0 # default value of 0
+	var level = 1 # default value of 1
 	var file = File.new()
 	var e = file.open(GAME_DATA_PATH, File.READ)
 	if not e: # no error
