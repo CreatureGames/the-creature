@@ -283,6 +283,7 @@ tracks/8/keys = {
 }
 
 [node name="Level" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 12 )
 
 [node name="Background1" type="Sprite" parent="."]
@@ -347,12 +348,12 @@ position = Vector2( 764, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-frame = 16
+frame = 17
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 4
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -374,7 +375,7 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 8
+frame = 13
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]

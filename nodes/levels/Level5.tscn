@@ -30,6 +30,7 @@ extents = Vector2( 44, 24 )
 extents = Vector2( 16, 15.5 )
 
 [node name="Level2" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

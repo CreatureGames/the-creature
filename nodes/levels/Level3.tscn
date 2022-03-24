@@ -80,6 +80,7 @@ tracks/1/keys = {
 }
 
 [node name="Level" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 11 )
 
 [node name="Background" type="Sprite" parent="."]

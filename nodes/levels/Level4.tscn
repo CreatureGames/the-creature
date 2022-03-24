@@ -193,6 +193,7 @@ tracks/0/keys = {
 extents = Vector2( 16, 4 )
 
 [node name="Level" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 12 )
 
 [node name="Background" type="Sprite" parent="."]

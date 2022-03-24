@@ -18,6 +18,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 9, 10, 11,
 outlines = [ PoolVector2Array( 638, 49, 687, 111, 658, 153, 605, 155, 604, 187, 526, 187, 527, 210, 607, 210, 606, 232, 579, 252, 528, 255, 527, 271, 606, 274, 609, 289, 690, 290, 688, 335, 499, 332, 498, 302, 436, 282, 434, 260, 471, 241, 498, 241, 496, 223, 445, 217, 419, 192, 440, 131, 495, 128, 498, 93, 288, 95, 288, 50 ), PoolVector2Array( 527, 124, 526, 145, 579, 145, 579, 123 ) ]
 
 [node name="Level" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 9 )
 
 [node name="Background" type="Sprite" parent="."]
