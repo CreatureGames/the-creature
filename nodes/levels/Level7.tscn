@@ -186,7 +186,7 @@ format = 1
 position = Vector2( 308, 50 )
 scale = Vector2( 1.2, 1.2 )
 frames = ExtResource( 13 )
-frame = 18
+frame = 2
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -229,7 +229,7 @@ position = Vector2( 125, 224 )
 z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
-frame = 3
+frame = 2
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -237,11 +237,12 @@ position = Vector2( 186, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-frame = 15
+frame = 14
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
+frame = 6
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -251,7 +252,7 @@ script = ExtResource( 7 )
 cutscene = "OutroCutscene"
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
-position = Vector2( 204, 207 )
+position = Vector2( 215.73, 206.483 )
 
 [node name="CutsceneTrigger" type="Area2D" parent="."]
 position = Vector2( 34, -29 )

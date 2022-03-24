@@ -241,7 +241,7 @@ tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray( 0, 4.6, 12.3, 16.8 ),
+"times": PoolRealArray( 0, 4.6, 14.1, 16.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ "ramp-open", "still", "door-open", "door-close" ]
