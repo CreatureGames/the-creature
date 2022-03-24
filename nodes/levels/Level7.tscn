@@ -193,6 +193,7 @@ zoom_speed = 1.5
 cutscene_camera_target = NodePath("../CutsceneCameraTarget")
 
 [node name="Camera2D" type="Camera2D" parent="CameraController"]
+current = true
 zoom = Vector2( 0.3, 0.3 )
 limit_left = 0
 limit_top = 0
@@ -229,7 +230,7 @@ position = Vector2( 41, 224 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 7
+frame = 1
 playing = true
 
 [node name="CreatureBackpack" parent="CutsceneRobot" index="2"]
@@ -237,7 +238,7 @@ visible = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 5
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
