@@ -13,11 +13,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+color = Color( 0.105882, 0.113725, 0.164706, 0.501961 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 452.0
-margin_top = 246.0
+margin_top = 242.0
 margin_right = 572.0
-margin_bottom = 353.0
+margin_bottom = 357.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
@@ -28,15 +34,15 @@ text = "Paused"
 align = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
-margin_top = 47.0
+margin_top = 51.0
 margin_right = 120.0
-margin_bottom = 75.0
+margin_bottom = 79.0
 text = "Play"
 
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
-margin_top = 79.0
+margin_top = 87.0
 margin_right = 120.0
-margin_bottom = 107.0
+margin_bottom = 115.0
 text = "Menu"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="play_pressed"]
