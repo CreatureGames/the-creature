@@ -19,6 +19,7 @@ var idle_timer := 0.0
 const idle_timer_threshold = 5.0 # snooze for creature
 
 export(NodePath) var creature
+export var swappable := true setget set_swappable
 
 func _ready():
 	get_node(creature).visible = false
@@ -29,7 +30,7 @@ func _ready():
 	drill.disable()
 
 func _process(delta):
-	creature_backpack.visible = has_creature
+	creature_backpack.visible = has_creature if swappable else false
 	if idle_timer > idle_timer_threshold and creature_backpack.animation != "snooze":
 		creature_backpack.play("snooze")
 
@@ -45,13 +46,14 @@ func launch_creature():
 	get_node(creature).launch()
 
 func swap_player():
-	get_node(creature).enable()
-	get_node(creature).visible = true
-	cam.set_target(get_node(creature))
-	disable()
-	if has_creature:
-		launch_creature()
-	$SwitchAudio.play()
+	if swappable:
+		get_node(creature).enable()
+		get_node(creature).visible = true
+		cam.set_target(get_node(creature))
+		disable()
+		if has_creature:
+			launch_creature()
+		$SwitchAudio.play()
 
 func rejoin_robot():
 	store_creature()
@@ -119,3 +121,14 @@ func jump():
 	.jump()
 	$JumpAudio.play()
 
+func set_swappable(can_swap : bool):
+	if can_swap:
+		creature_backpack.visible = true
+		swappable = true
+	else:
+		store_creature()
+		creature_backpack.visible = false
+		swappable = false
+
+func set_swappable_after(_arg0, swap:bool):
+	set_swappable(swap)

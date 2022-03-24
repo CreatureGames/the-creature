@@ -342,7 +342,7 @@ z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
 animation = "sleep"
-frame = 7
+frame = 1
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -352,12 +352,11 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 2
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 5
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -385,7 +384,7 @@ shape = SubResource( 78 )
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
@@ -493,11 +492,13 @@ position = Vector2( 176, 208 )
 position = Vector2( 2229, 209 )
 level = NodePath("..")
 
+[connection signal="ready" from="PlayerRobot" to="PlayerRobot" method="set_swappable" binds= [ false ]]
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
 [connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="enable_level_end"]
 [connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerRobot" method="set_swappable_after" binds= [ true ]]
 [connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
 [connection signal="ready" from="LevelEnd" to="." method="disable_level_end"]
 
