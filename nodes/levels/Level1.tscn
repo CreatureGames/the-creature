@@ -295,18 +295,6 @@ script = ExtResource( 12 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 0.5 )
 
-[node name="Background1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 112, -144 )
-z_index = -10
-texture = ExtResource( 14 )
-centered = false
-
-[node name="Background2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1184, -144 )
-z_index = -10
-texture = ExtResource( 14 )
-centered = false
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -348,7 +336,7 @@ z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
 animation = "sleep"
-frame = 7
+frame = 5
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -358,12 +346,11 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 7
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 3
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -392,7 +379,7 @@ shape = SubResource( 78 )
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 11
+frame = 4
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
@@ -519,6 +506,18 @@ texture = ExtResource( 15 )
 centered = false
 hframes = 5
 frame = 2
+
+[node name="Background1" type="Sprite" parent="."]
+position = Vector2( 112, -144 )
+z_index = -10
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 1184, -144 )
+z_index = -10
+texture = ExtResource( 14 )
+centered = false
 
 [connection signal="ready" from="PlayerRobot" to="PlayerRobot" method="set_swappable" binds= [ false ]]
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]

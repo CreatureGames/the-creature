@@ -386,11 +386,10 @@ script = ExtResource( 12 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
+motion_scale = Vector2( 0.3, 0.3 )
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -97, -55 )
-scale = Vector2( 0.821667, 0.821667 )
+position = Vector2( -272, -112 )
 z_index = -10
 z_as_relative = false
 texture = ExtResource( 13 )
@@ -466,7 +465,7 @@ polygon = PoolVector2Array( -78, 31, 82, 143, 162, 143, 314, 15, 314, -41, 58, -
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 147, 112 )
 frames = SubResource( 19 )
-frame = 9
+frame = 4
 playing = true
 
 [node name="EmoteBubble" parent="AnimatedSprite" instance=ExtResource( 20 )]
@@ -484,7 +483,7 @@ shape = SubResource( 49 )
 position = Vector2( 192, 112 )
 frames = SubResource( 32 )
 animation = "New Anim"
-frame = 3
+frame = 10
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -493,7 +492,7 @@ rotation = 3.14159
 scale = Vector2( 1, -1 )
 frames = SubResource( 48 )
 animation = "New Anim"
-frame = 11
+frame = 4
 playing = true
 
 [node name="EasterEgg" type="Area2D" parent="."]
