@@ -78,6 +78,26 @@ region = Rect2( 384, 0, 32, 32 )
 atlas = ExtResource( 6 )
 region = Rect2( 416, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 6 )
+region = Rect2( 288, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 6 )
+region = Rect2( 320, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 6 )
+region = Rect2( 352, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 6 )
+region = Rect2( 384, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 6 )
+region = Rect2( 416, 64, 32, 32 )
+
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 32, 32, 32 )
@@ -138,26 +158,6 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 6 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 6 )
-region = Rect2( 288, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 6 )
-region = Rect2( 320, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 6 )
-region = Rect2( 352, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 6 )
-region = Rect2( 384, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 6 )
-region = Rect2( 416, 64, 32, 32 )
-
 [sub_resource type="SpriteFrames" id=37]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
@@ -165,14 +165,14 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
-"loop": false,
-"name": "interact",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
 "loop": false,
 "name": "recover",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": false,
+"name": "interact",
 "speed": 12.0
 } ]
 
@@ -331,9 +331,7 @@ position = Vector2( 2112, 224 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
-position = Vector2( 513.758, 224 )
-scale = Vector2( -1, 1 )
-z_index = -1
+position = Vector2( 360.579, 224.038 )
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
 animation = "sit"
@@ -342,16 +340,17 @@ playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
 visible = false
-position = Vector2( 575, 224 )
+position = Vector2( 764, 224 )
 scale = Vector2( -1, 1 )
+z_index = -1
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 5
+frame = 3
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
-frame = 7
+frame = 5
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -380,7 +379,7 @@ shape = SubResource( 2 )
 position = Vector2( 552, 208 )
 frames = SubResource( 37 )
 animation = "idle"
-frame = 1
+frame = 13
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
@@ -530,9 +529,9 @@ centered = false
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
 [connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
-[connection signal="animation_finished" from="AnimationPlayer" to="PlayerRobot" method="set_swappable_after" binds= [ true ]]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="enable_level_end"]
 [connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerRobot" method="set_swappable_after" binds= [ true ]]
 [connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
 [connection signal="ready" from="LevelEnd" to="." method="disable_level_end"]
 
