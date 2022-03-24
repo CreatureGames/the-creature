@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/CameraController.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/puzzles/platform.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://nodes/puzzles/Button.tscn" type="PackedScene" id=9]
 [ext_resource path="res://nodes/puzzles/Platform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nodes/puzzles/Piston.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/Level.gd" type="Script" id=12]
+[ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 4 )
@@ -22,6 +24,7 @@ extents = Vector2( 16, 32 )
 extents = Vector2( 56, 56 )
 
 [node name="Level6" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( -512, -300 )
@@ -191,6 +194,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 728, -88 )
 shape = SubResource( 3 )
+
+[node name="LevelEnd" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1008, 368 )
+level = NodePath("..")
 
 [connection signal="pressed" from="DoorButton1" to="Door1" method="open"]
 [connection signal="pressed" from="DoorButton1" to="Door4" method="open"]
