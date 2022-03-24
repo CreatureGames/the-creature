@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/animations/IntroCutscene.tres" type="Animation" id=11]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=12]
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/images/backgrounds/underground-background.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 16.4266, 13.6115 )
@@ -72,6 +73,26 @@ region = Rect2( 384, 0, 32, 32 )
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 6 )
 region = Rect2( 416, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 6 )
+region = Rect2( 288, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 6 )
+region = Rect2( 320, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 6 )
+region = Rect2( 352, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 6 )
+region = Rect2( 384, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 6 )
+region = Rect2( 416, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 6 )
@@ -133,26 +154,6 @@ region = Rect2( 224, 64, 32, 32 )
 atlas = ExtResource( 6 )
 region = Rect2( 256, 64, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=68]
-atlas = ExtResource( 6 )
-region = Rect2( 288, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=69]
-atlas = ExtResource( 6 )
-region = Rect2( 320, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=70]
-atlas = ExtResource( 6 )
-region = Rect2( 352, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=71]
-atlas = ExtResource( 6 )
-region = Rect2( 384, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 6 )
-region = Rect2( 416, 64, 32, 32 )
-
 [sub_resource type="SpriteFrames" id=73]
 animations = [ {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
@@ -160,14 +161,14 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
-"loop": false,
-"name": "interact",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
 "loop": false,
 "name": "recover",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
+"loop": false,
+"name": "interact",
 "speed": 12.0
 } ]
 
@@ -284,16 +285,17 @@ tracks/8/keys = {
 [node name="Level" type="Node2D"]
 script = ExtResource( 12 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( -512, -300 )
+[node name="Background1" type="Sprite" parent="."]
+position = Vector2( 96, 0 )
+z_index = -10
+texture = ExtResource( 14 )
+centered = false
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
-
-[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 1168, 0 )
+z_index = -10
+texture = ExtResource( 14 )
+centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -327,7 +329,7 @@ position = Vector2( 198, -14 )
 robot = NodePath("../PlayerRobot")
 
 [node name="PlayerRobot" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2199, 224 )
+position = Vector2( 2192, 208 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
@@ -336,7 +338,7 @@ z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
 animation = "sleep"
-frame = 4
+frame = 1
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -346,12 +348,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 6
+frame = 1
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 6
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -372,6 +374,7 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
+frame = 9
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]

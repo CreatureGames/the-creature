@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button.png-7a7a560ef3755ecdbbb397c1da7c88a2.stex"
+path="res://.import/underground-background.png-36ae375f3cb96fe7cd616389c6c19dfd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/puzzles/button.png"
-dest_files=[ "res://.import/button.png-7a7a560ef3755ecdbbb397c1da7c88a2.stex" ]
+source_file="res://assets/images/backgrounds/underground-background.png"
+dest_files=[ "res://.import/underground-background.png-36ae375f3cb96fe7cd616389c6c19dfd.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
