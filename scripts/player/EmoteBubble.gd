@@ -10,6 +10,11 @@ func emote(name : String):
 	emote.stop()
 	_pop_out_bubble()
 	
+func _process(delta):
+	var p = get_parent()
+	if not p is PlayerRobot:
+		scale.x = 1 if p.scale.x >= 0 else -1
+	
 func flip(left : bool):
 	scale.x = -1 if left else 1
 	emote.flip_h = left
