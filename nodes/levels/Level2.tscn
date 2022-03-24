@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://nodes/puzzles/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=9]
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/images/backgrounds/underground-background.png" type="Texture" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 687, 111, 658, 153, 605, 155, 579, 145, 579, 123, 638, 49, 527, 210, 607, 210, 606, 232, 579, 252, 528, 255, 498, 241, 496, 223, 609, 289, 690, 290, 688, 335, 499, 332, 498, 302, 606, 274, 527, 271, 498, 93, 288, 95, 288, 50, 604, 187, 526, 187, 526, 145, 527, 124, 495, 128, 436, 282, 434, 260, 471, 241, 445, 217, 419, 192, 440, 131 )
@@ -19,16 +20,10 @@ outlines = [ PoolVector2Array( 638, 49, 687, 111, 658, 153, 605, 155, 604, 187, 
 [node name="Level" type="Node2D"]
 script = ExtResource( 9 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_offset = Vector2( -512, -300 )
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
-
-[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
+[node name="Background" type="Sprite" parent="."]
+z_index = -10
+texture = ExtResource( 11 )
+centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -74,7 +69,7 @@ collision_mask = 2
 polygon = PoolVector2Array( -135, 110, -21, 75, 139, 102, 137, -135, -136, -134 )
 
 [node name="Bat" parent="." instance=ExtResource( 5 )]
-position = Vector2( 607, 49 )
+position = Vector2( 609, 49 )
 nav2D = NodePath("../Navigation2D")
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -85,6 +80,7 @@ navpoly = SubResource( 1 )
 
 [node name="Door1" parent="." instance=ExtResource( 8 )]
 position = Vector2( 281, 80 )
+close_delay = 0.5
 
 [node name="Button1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 206, 80 )

@@ -30,6 +30,8 @@ extents = Vector2( 6.5, 13.5 )
 [node name="PlayerRobot" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
+ground_friction = 800.0
+air_friction = 60.0
 
 [node name="BatteryIndicator" type="TextureProgress" parent="."]
 margin_left = -13.5

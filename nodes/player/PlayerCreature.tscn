@@ -24,7 +24,7 @@ script = ExtResource( 6 )
 max_speed = 140.0
 jump_height = 54.0
 jump_apex_time = 0.35
-air_friction = 40.0
+ground_friction = 650.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -16 )
