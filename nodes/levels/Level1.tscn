@@ -331,13 +331,11 @@ position = Vector2( 2112, 224 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
-position = Vector2( 513.758, 224 )
-scale = Vector2( -1, 1 )
+position = Vector2( 267, 224 )
 z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
-animation = "sit"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -346,12 +344,13 @@ position = Vector2( 575, 224 )
 scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-animation = "run"
+animation = "hurt"
 frame = 5
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
-frame = 7
+visible = false
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -380,7 +379,7 @@ shape = SubResource( 2 )
 position = Vector2( 552, 208 )
 frames = SubResource( 37 )
 animation = "idle"
-frame = 1
+frame = 6
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
@@ -530,9 +529,9 @@ centered = false
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.5 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
 [connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
-[connection signal="animation_finished" from="AnimationPlayer" to="PlayerRobot" method="set_swappable_after" binds= [ true ]]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="enable_level_end"]
 [connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerRobot" method="set_swappable_after" binds= [ true ]]
 [connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
 [connection signal="ready" from="LevelEnd" to="." method="disable_level_end"]
 
