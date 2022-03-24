@@ -103,8 +103,8 @@ margin_bottom = 71.0
 text = "Made with"
 
 [node name="Label4" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 228.0
-margin_right = 528.0
+margin_left = 88.0
+margin_right = 388.0
 margin_bottom = 121.0
 texture = ExtResource( 4 )
 
