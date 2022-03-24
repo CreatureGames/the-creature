@@ -338,7 +338,7 @@ z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
 animation = "sleep"
-frame = 5
+frame = 1
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
@@ -348,12 +348,12 @@ scale = Vector2( -1, 1 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
 animation = "run"
-frame = 7
+frame = 1
 playing = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 7
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -375,7 +375,7 @@ hframes = 21
 position = Vector2( 552, 208 )
 frames = SubResource( 73 )
 animation = "idle"
-frame = 9
+frame = 11
 playing = true
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/images/characters/color-robot-active.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/characters/color-robot-inactive.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/animations/Drill.tres" type="SpriteFrames" id=5]
 [ext_resource path="res://nodes/SparkParticles.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nodes/SmokeParticles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/player/EmoteBubble.tscn" type="PackedScene" id=8]
 
 [node name="CutsceneRobot" type="Node2D"]
 
@@ -58,3 +59,7 @@ position = Vector2( -11, -17 )
 [node name="CPUParticles2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( -11, -17 )
 emitting = false
+
+[node name="EmoteBubble" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 0, -24 )
