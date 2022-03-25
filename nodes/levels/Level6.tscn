@@ -38,7 +38,7 @@ motion_scale = Vector2( 0.5, 0.5 )
 position = Vector2( 432, 256 )
 scale = Vector2( 1.7, 1.7 )
 frames = ExtResource( 14 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
@@ -208,6 +208,7 @@ shape = SubResource( 3 )
 position = Vector2( 1008, 368 )
 level = NodePath("..")
 
+[connection signal="ready" from="." to="." method="play_music" binds= [ 2 ]]
 [connection signal="pressed" from="DoorButton1" to="Door1" method="open"]
 [connection signal="pressed" from="DoorButton1" to="Door4" method="open"]
 [connection signal="pressed" from="DoorButton1" to="Platform2" method="go_forward"]

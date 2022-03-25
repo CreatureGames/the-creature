@@ -74,7 +74,7 @@ tracks/1/keys = {
 "values": [ Color( 0.105882, 0.113725, 0.164706, 1 ), Color( 0.105882, 0.113725, 0.164706, 0 ) ]
 }
 
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 11 )
 
@@ -215,6 +215,7 @@ position = Vector2( 96, 352 )
 position = Vector2( 592, 386 )
 level = NodePath("..")
 
+[connection signal="ready" from="." to="." method="play_music" binds= [ 1 ]]
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.3 ]]
 [connection signal="pressed" from="SecretButton" to="SecretDoor" method="open"]
 [connection signal="pressed" from="Button3-1" to="Door3" method="open"]
