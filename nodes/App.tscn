@@ -24,7 +24,6 @@ tile_map = NodePath("Background")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource( 1 )]
-visible = false
 
 [node name="HelpMenu" parent="CanvasLayer" instance=ExtResource( 3 )]
 visible = false
@@ -85,7 +84,7 @@ tracks = [ ExtResource( 5 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 
 [node name="Tween" type="Tween" parent="Music"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( -951, -317 )
+position = Vector2( -951, -325 )
 scale = Vector2( 4, 4 )
 z_index = -100
 texture = ExtResource( 11 )
