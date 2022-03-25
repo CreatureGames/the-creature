@@ -365,7 +365,7 @@ position = Vector2( 1056, 160 )
 level = NodePath("..")
 
 [node name="Control-tips" type="Sprite" parent="."]
-position = Vector2( 1051, 241 )
+position = Vector2( 1000, 216 )
 texture = ExtResource( 21 )
 hframes = 5
 frame = 3
