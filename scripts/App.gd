@@ -153,6 +153,8 @@ func _input(event) -> void:
 	# pausing should only happen when playing a level
 	if event.is_action_pressed("pause") and active_level:
 		toggle_pause()
+	elif event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
 
 ######## LEVEL DATA ########
