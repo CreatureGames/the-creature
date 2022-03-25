@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://nodes/player/PlayerRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemaps/Underground.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://nodes/LevelEnd.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/animations/Spaceship.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://assets/animations/OverworldBackground.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://nodes/EasterEggCreature.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 length = 20.0
@@ -164,6 +165,134 @@ tracks/13/keys = {
 "points": PoolRealArray( -27, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("EasterEggCreature4:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 12, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("EasterEggCreature4:position:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("EasterEggCreature2:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 12, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("EasterEggCreature2:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("EasterEggCreature:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 12, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/19/type = "bezier"
+tracks/19/path = NodePath("EasterEggCreature:position:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/20/type = "bezier"
+tracks/20/path = NodePath("EasterEggCreature3:position:x")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"points": PoolRealArray( 12, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/21/type = "bezier"
+tracks/21/path = NodePath("EasterEggCreature3:position:y")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"points": PoolRealArray( 224, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("EasterEggCreature:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("EasterEggCreature3:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("EasterEggCreature2:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("EasterEggCreature4:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -186,7 +315,7 @@ format = 1
 position = Vector2( 308, 50 )
 scale = Vector2( 1.2, 1.2 )
 frames = ExtResource( 13 )
-frame = 2
+frame = 15
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -225,24 +354,28 @@ position = Vector2( 38, -27 )
 creature = NodePath("../PlayerCreature")
 
 [node name="CutsceneCreature" parent="." instance=ExtResource( 9 )]
-position = Vector2( 125, 224 )
+visible = false
+position = Vector2( 43, -21 )
 z_index = -1
 
 [node name="AnimatedSprite" parent="CutsceneCreature" index="0"]
-frame = 2
+animation = "jump"
+frame = 6
 playing = true
 
 [node name="CutsceneRobot" parent="." instance=ExtResource( 8 )]
-position = Vector2( 186, 224 )
-scale = Vector2( -1, 1 )
+position = Vector2( 41, 224 )
 
 [node name="Robot" parent="CutsceneRobot" index="1"]
-frame = 14
+animation = "run"
 playing = true
+
+[node name="CreatureBackpack" parent="CutsceneRobot" index="2"]
+visible = true
 
 [node name="DrillSprite" parent="CutsceneRobot" index="3"]
 visible = false
-frame = 6
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -252,7 +385,7 @@ script = ExtResource( 7 )
 cutscene = "OutroCutscene"
 
 [node name="CutsceneCameraTarget" type="Position2D" parent="."]
-position = Vector2( 215.73, 206.483 )
+position = Vector2( 157, 209 )
 
 [node name="CutsceneTrigger" type="Area2D" parent="."]
 position = Vector2( 34, -29 )
@@ -268,12 +401,40 @@ level = NodePath("..")
 [node name="Spaceship" type="AnimatedSprite" parent="."]
 position = Vector2( 385, 160 )
 frames = ExtResource( 12 )
-animation = "still"
-playing = true
+animation = "ramp-open"
 
+[node name="EasterEggCreature" parent="." instance=ExtResource( 14 )]
+position = Vector2( 12, 224 )
+
+[node name="AnimatedSprite" parent="EasterEggCreature" index="0"]
+animation = "blue-run"
+
+[node name="EasterEggCreature3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 12, 224 )
+
+[node name="AnimatedSprite" parent="EasterEggCreature3" index="0"]
+animation = "green-run"
+
+[node name="EasterEggCreature2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 12, 224 )
+
+[node name="AnimatedSprite" parent="EasterEggCreature2" index="0"]
+animation = "pink-run"
+
+[node name="EasterEggCreature4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 12, 224 )
+
+[node name="AnimatedSprite" parent="EasterEggCreature4" index="0"]
+animation = "red-run"
+
+[connection signal="ready" from="." to="." method="play_music" binds= [ 3 ]]
 [connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
 [connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
 [connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
 
 [editable path="CutsceneCreature"]
 [editable path="CutsceneRobot"]
+[editable path="EasterEggCreature"]
+[editable path="EasterEggCreature3"]
+[editable path="EasterEggCreature2"]
+[editable path="EasterEggCreature4"]

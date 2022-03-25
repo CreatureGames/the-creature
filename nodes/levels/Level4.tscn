@@ -194,7 +194,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16, 4 )
 
-[node name="Level" type="Node2D"]
+[node name="Level4" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 12 )
 
@@ -370,6 +370,7 @@ texture = ExtResource( 21 )
 hframes = 5
 frame = 3
 
+[connection signal="ready" from="." to="." method="play_music" binds= [ 1 ]]
 [connection signal="body_entered" from="ZoomOut" to="CameraController" method="set_zoom" binds= [ 0.55 ]]
 [connection signal="body_entered" from="ZoomIn" to="CameraController" method="set_zoom" binds= [ 0.4 ]]
 [connection signal="body_exited" from="ZoomIn" to="CameraController" method="set_zoom" binds= [ 0.55 ]]

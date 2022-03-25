@@ -113,6 +113,7 @@ texture = ExtResource( 5 )
 hframes = 5
 frame = 4
 
+[connection signal="ready" from="." to="." method="play_music" binds= [ 0 ]]
 [connection signal="body_entered" from="Area2D" to="CameraController" method="set_zoom" binds= [ 0.45 ]]
 [connection signal="body_exited" from="Area2D" to="CameraController" method="set_zoom"]
 [connection signal="pressed" from="Button1" to="Door1" method="open"]

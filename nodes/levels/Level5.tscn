@@ -34,7 +34,7 @@ extents = Vector2( 44, 24 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 15.5 )
 
-[node name="Level3" type="Node2D"]
+[node name="Level5" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 13 )
 
@@ -54,14 +54,14 @@ motion_scale = Vector2( 0.5, 0.5 )
 position = Vector2( 512, 272 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 14 )
-frame = 18
+frame = 22
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 1536, 288 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 14 )
-frame = 17
+frame = 21
 playing = true
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
@@ -309,6 +309,7 @@ position = Vector2( 1600, 256 )
 position = Vector2( 2032, 304 )
 level = NodePath("..")
 
+[connection signal="ready" from="." to="." method="play_music" binds= [ 2 ]]
 [connection signal="pressed" from="DoorButton2" to="Door" method="open"]
 [connection signal="released" from="DoorButton2" to="Door" method="start_closing"]
 [connection signal="going_forward" from="Platform1" to="Piston1" method="animate"]

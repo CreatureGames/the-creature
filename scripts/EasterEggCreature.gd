@@ -10,3 +10,8 @@ func _ready():
 
 func _find_easter_egg(_body):
 	emit_signal("easter_egg_found")
+
+func end_game_check():
+	if not get_node("../..") is Viewport:
+		if get_node("../..").found_easter_egg:
+			visible = true

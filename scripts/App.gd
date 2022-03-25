@@ -29,7 +29,7 @@ func play_game(level: int) -> void:
 # shows main menu
 func main_menu() -> void:
 	if active_level:
-		evict_level()
+		call_deferred("evict_level")
 	set_active_menu($CanvasLayer/MainMenu)
 
 # hides main menu and shows help screen
@@ -71,9 +71,9 @@ func set_active_menu(menu) -> void:
 		
 		if active_menu != $CanvasLayer/PauseMenu:
 			if not has_node(_menu_tiles.name):
-				add_child(_menu_tiles)
+				call_deferred("add_child", _menu_tiles)
 	elif has_node(_menu_tiles.name):
-		remove_child(_menu_tiles)
+		call_deferred("remove_child", _menu_tiles)
 
 # loads the specified level and returns true if successful
 func load_level(level: int) -> bool:
@@ -93,7 +93,7 @@ func load_level(level: int) -> bool:
 func level_loaded(level) -> void:
 	set_active_menu(null)
 	active_level = level
-	add_child(active_level)
+	call_deferred("add_child", active_level)
 	active_level.connect("completed", self, "level_completed")
 
 # async loading stuff
@@ -133,7 +133,7 @@ func evict_level() -> void:
 func level_completed() -> void:
 	level_num += 1
 	save_level_num(level_num)
-	evict_level()
+	call_deferred("evict_level")
 	
 	# attempt to load level, but if no more remain...
 	if not load_level(level_num):
@@ -153,6 +153,8 @@ func _input(event) -> void:
 	# pausing should only happen when playing a level
 	if event.is_action_pressed("pause") and active_level:
 		toggle_pause()
+	elif event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
 
 ######## LEVEL DATA ########
@@ -164,7 +166,7 @@ func load_level_num() -> int:
 	var e = file.open(GAME_DATA_PATH, File.READ)
 	if not e: # no error
 		level = file.get_8()
-		found_easter_egg = file.get_8()
+		found_easter_egg = bool(file.get_8())
 		file.close()
 	return level
 
@@ -179,7 +181,7 @@ func save_level_num(level: int) -> bool:
 		var e = file.open(GAME_DATA_PATH, File.WRITE)
 		if not e: # no error
 			file.store_8(level)
-			file.store_8(found_easter_egg)
+			file.store_8(int(found_easter_egg))
 			file.close()
 		else: # error saving
 			result = false
