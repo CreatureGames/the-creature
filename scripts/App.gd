@@ -166,7 +166,8 @@ func load_level_num() -> int:
 	var e = file.open(GAME_DATA_PATH, File.READ)
 	if not e: # no error
 		level = file.get_8()
-		found_easter_egg = bool(file.get_8())
+		if not found_easter_egg:
+			found_easter_egg = bool(file.get_8())
 		file.close()
 	return level
 
@@ -175,15 +176,15 @@ func load_level_num() -> int:
 func save_level_num(level: int) -> bool:
 	var result = true
 	
-	# only save level if it's bigger than the currently saved one
-	if level > load_level_num():
-		var file = File.new()
-		var e = file.open(GAME_DATA_PATH, File.WRITE)
-		if not e: # no error
-			file.store_8(level)
-			file.store_8(int(found_easter_egg))
-			file.close()
-		else: # error saving
-			result = false
+	var savedlevel : int = load_level_num()
+	
+	var file = File.new()
+	var e = file.open(GAME_DATA_PATH, File.WRITE)
+	if not e: # no error
+		file.store_8(max(level, savedlevel))
+		file.store_8(int(found_easter_egg))
+		file.close()
+	else: # error saving
+		result = false
 	
 	return result
