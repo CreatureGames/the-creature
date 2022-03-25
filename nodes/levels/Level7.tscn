@@ -315,7 +315,7 @@ format = 1
 position = Vector2( 308, 50 )
 scale = Vector2( 1.2, 1.2 )
 frames = ExtResource( 13 )
-frame = 15
+frame = 3
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -429,6 +429,7 @@ position = Vector2( 12, 224 )
 animation = "red-run"
 
 [connection signal="ready" from="." to="." method="play_music" binds= [ 3 ]]
+[connection signal="ready" from="." to="PlayerRobot" method="disable"]
 [connection signal="animation_finished" from="AnimationPlayer" to="CameraController" method="stop_cutscene"]
 [connection signal="animation_started" from="AnimationPlayer" to="CameraController" method="start_cutscene"]
 [connection signal="body_entered" from="CutsceneTrigger" to="AnimationPlayer" method="enter_trigger"]
