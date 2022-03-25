@@ -64,6 +64,7 @@ _global_script_class_icons={
 
 config/name="The Creature"
 run/main_scene="res://nodes/App.tscn"
+boot_splash/image="res://splash.png"
 config/icon="res://32.png"
 config/windows_native_icon="res://icon.ico"
 
